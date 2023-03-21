@@ -9,6 +9,7 @@ module.exports = {
           100: '#e9f2ef',
           300: '#d2f34c',
           400: '#9fb448',
+          450: '#81B197',
           500: '#31795a',
           700: '#254135',
         },
@@ -31,6 +32,10 @@ module.exports = {
         'job-categories-art': 'url("./assets/job-categories-art.svg")',
         'job-categories-art-2': 'url("./assets/job-categories-art-2.svg")',
         checkmark: 'url("./assets/checkmark.svg")',
+        'account-icon': 'url("./assets/account-icon.svg")',
+        'profile-icon': 'url("./assets/profile-icon.svg")',
+        'apply-icon': 'url("./assets/apply-icon.svg")',
+        arrow: 'url("./assets/arrow.svg")',
       },
       borderRadius: {
         '4xl': '60px',
