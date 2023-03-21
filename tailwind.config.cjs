@@ -19,10 +19,14 @@ module.exports = {
         'eb-garamond': ['EB Garamond', 'serif'],
         gordita: ['Gordita Regular', 'sans-serif'],
       },
+      content: {
+        'category-icon': 'url("./assets/category-icon.svg")',
+        'jobi-icon': 'url("./assets/jobi-icon.svg")',
+      },
     },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-};
+}
