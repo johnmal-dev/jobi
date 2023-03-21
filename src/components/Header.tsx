@@ -4,7 +4,7 @@ import logo from '../assets/jobi-icon.svg'
 
 const Header = () => {
   return (
-    <div className="bg-palette-800 text-palette-100 font-gordita text-base">
+    <div className="bg-primary-700 text-secondary-100 font-gordita text-base">
       <div className="container mx-auto pt-12 flex justify-between items-center">
         {/* Left */}
         <div className="flex justify-start items-center">
@@ -13,7 +13,7 @@ const Header = () => {
             jobi
           </div>
           {/* Category Button */}
-          <div className="mx-6 px-4 py-1 text-palette-500 bg-palette-100 bg-opacity-10 rounded-full before:content-category-icon before:pr-2">
+          <div className="mx-6 px-4 py-1 text-primary-300 bg-secondary-100 bg-opacity-10 rounded-full before:content-category-icon before:pr-2">
             Category
           </div>
           {/* Menu */}
@@ -37,11 +37,11 @@ const Header = () => {
         </div>
         {/* Right */}
         <div className="flex justify-center items-center">
-          <div className="px-4 border-r-2 border-palette-100 border-opacity-25">
+          <div className="px-4 border-r-2 border-secondary-100 border-opacity-25">
             Post Job
           </div>
-          <div className="px-4 text-palette-500">Login</div>
-          <div className="bg-palette-500 text-palette-800 rounded-full px-6 py-2">
+          <div className="px-4 text-primary-300">Login</div>
+          <div className="bg-primary-300 text-primary-700 rounded-full px-6 py-2">
             Hire Top Talents
           </div>
         </div>

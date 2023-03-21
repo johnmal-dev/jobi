@@ -2,7 +2,7 @@ import React from 'react'
 
 const HomeBannerSection = () => {
   return (
-    <div className="pt-6 bg-palette-800 relative">
+    <div className="pt-6 bg-primary-700 relative">
       <div className="container">
         {/* Left */}
         <div>
