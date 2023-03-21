@@ -5,7 +5,7 @@ import logo from '../assets/jobi-icon.svg'
 const Header = () => {
   return (
     <div className="bg-palette-800 text-palette-100 font-gordita text-base">
-      <div className="container mx-auto py-12 flex justify-between items-center">
+      <div className="container mx-auto pt-12 flex justify-between items-center">
         {/* Left */}
         <div className="flex justify-start items-center">
           {/* Jobi Icon */}
