@@ -30,6 +30,7 @@ module.exports = {
         'banner-art-2': 'url("./assets/banner-art-2.svg")',
         'job-categories-art': 'url("./assets/job-categories-art.svg")',
         'job-categories-art-2': 'url("./assets/job-categories-art-2.svg")',
+        checkmark: 'url("./assets/checkmark.svg")',
       },
       borderRadius: {
         '4xl': '60px',
