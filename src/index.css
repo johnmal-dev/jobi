@@ -11,7 +11,8 @@
   font-family: 'Gordita Regular Italic';
   font-style: normal;
   font-weight: normal;
-  src: local('Gordita Regular Italic'), url('Gordita Regular Italic.woff') format('woff');
+  src: local('Gordita Regular Italic'),
+    url('Gordita Regular Italic.woff') format('woff');
 }
 
 @font-face {
@@ -25,7 +26,8 @@
   font-family: 'Gordita Thin Italic';
   font-style: normal;
   font-weight: normal;
-  src: local('Gordita Thin Italic'), url('Gordita Thin Italic.woff') format('woff');
+  src: local('Gordita Thin Italic'),
+    url('Gordita Thin Italic.woff') format('woff');
 }
 
 @font-face {
@@ -39,7 +41,8 @@
   font-family: 'Gordita Light Italic';
   font-style: normal;
   font-weight: normal;
-  src: local('Gordita Light Italic'), url('Gordita Light Italic.woff') format('woff');
+  src: local('Gordita Light Italic'),
+    url('Gordita Light Italic.woff') format('woff');
 }
 
 @font-face {
@@ -53,7 +56,8 @@
   font-family: 'Gordita Medium Italic';
   font-style: normal;
   font-weight: normal;
-  src: local('Gordita Medium Italic'), url('Gordita Medium Italic.woff') format('woff');
+  src: local('Gordita Medium Italic'),
+    url('Gordita Medium Italic.woff') format('woff');
 }
 
 @font-face {
@@ -67,7 +71,8 @@
   font-family: 'Gordita Bold Italic';
   font-style: normal;
   font-weight: normal;
-  src: local('Gordita Bold Italic'), url('Gordita Bold Italic.woff') format('woff');
+  src: local('Gordita Bold Italic'),
+    url('Gordita Bold Italic.woff') format('woff');
 }
 
 @font-face {
@@ -81,7 +86,8 @@
   font-family: 'Gordita Black Italic';
   font-style: normal;
   font-weight: normal;
-  src: local('Gordita Black Italic'), url('Gordita Black Italic.woff') format('woff');
+  src: local('Gordita Black Italic'),
+    url('Gordita Black Italic.woff') format('woff');
 }
 
 @font-face {
@@ -95,7 +101,8 @@
   font-family: 'Gordita Ultra Italic';
   font-style: normal;
   font-weight: normal;
-  src: local('Gordita Ultra Italic'), url('Gordita Ultra Italic.woff') format('woff');
+  src: local('Gordita Ultra Italic'),
+    url('Gordita Ultra Italic.woff') format('woff');
 }
 
 @tailwind base;
