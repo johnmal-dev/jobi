@@ -28,6 +28,11 @@ module.exports = {
         'header-art': 'url("./assets/header-art.svg")',
         'banner-art': 'url("./assets/banner-art.svg")',
         'banner-art-2': 'url("./assets/banner-art-2.svg")',
+        'job-categories-art': 'url("./assets/job-categories-art.svg")',
+        'job-categories-art-2': 'url("./assets/job-categories-art-2.svg")',
+      },
+      borderRadius: {
+        '4xl': '60px',
       },
     },
   },

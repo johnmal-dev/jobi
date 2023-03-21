@@ -65,7 +65,7 @@ const HomeBannerSection = () => {
         {/* Right */}
         <div className="relative">
           <div className="absolute before:content-banner-art-2"></div>
-          <div className="bg-secondary-500 h-full translate-x-4 max-w-2xl translate-y-24">
+          <div className="bg-secondary-500 h-full translate-x-4 max-w-2xl translate-y-16 overflow-visible">
             <img src="#" alt="" />
           </div>
         </div>
