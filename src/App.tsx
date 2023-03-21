@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="text-secondary-900">
+    <div className="text-secondary-900 font-gordita">
       <Header />
       <Main />
       <Footer />

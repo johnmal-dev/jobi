@@ -8,6 +8,7 @@ module.exports = {
         primary: {
           100: '#e9f2ef',
           300: '#d2f34c',
+          400: '#9fb448',
           500: '#31795a',
           700: '#254135',
         },
@@ -24,11 +25,14 @@ module.exports = {
       content: {
         'category-icon': 'url("./assets/category-icon.svg")',
         'jobi-icon': 'url("./assets/jobi-icon.svg")',
+        'header-art': 'url("./assets/header-art.svg")',
+        'banner-art': 'url("./assets/banner-art.svg")',
+        'banner-art-2': 'url("./assets/banner-art-2.svg")',
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 }

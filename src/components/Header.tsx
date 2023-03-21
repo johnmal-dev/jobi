@@ -5,7 +5,7 @@ import logo from '../assets/jobi-icon.svg'
 const Header = () => {
   return (
     <div className="bg-primary-700 text-secondary-100 font-gordita text-base">
-      <div className="container mx-auto pt-12 flex justify-between items-center">
+      <div className="relative container mx-auto pt-12 flex justify-between items-center">
         {/* Left */}
         <div className="flex justify-start items-center">
           {/* Jobi Icon */}
@@ -45,6 +45,8 @@ const Header = () => {
             Hire Top Talents
           </div>
         </div>
+        {/* Header Art */}
+        <div className="absolute before:content-header-art left-2/3"></div>
       </div>
     </div>
   )
