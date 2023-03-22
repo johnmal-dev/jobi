@@ -4,8 +4,8 @@ import image from '../../assets/get-talented-experts-image.svg'
 
 const GetTalentedExpertsSection = () => {
   return (
-    <div>
-      <div className="container mx-auto bg-white p-44 grid grid-cols-2">
+    <div className="bg-white">
+      <div className="container mx-auto p-44 grid grid-cols-2">
         <div>
           <img src={image} alt="" className="h-full" />
         </div>
