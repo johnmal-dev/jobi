@@ -2,8 +2,8 @@ import React from 'react'
 
 const HomeBannerSection = () => {
   return (
-    <div className="pt-6 bg-primary-700 relative">
-      <div className="container mx-auto px-16 grid grid-cols-2">
+    <div className="relative bg-primary-700 pt-6">
+      <div className="container mx-auto grid grid-cols-2 px-16">
         {/* Left */}
         <div className="py-24">
           <h1 className="font-eb-garamond text-8xl">
@@ -11,14 +11,14 @@ const HomeBannerSection = () => {
             <span className="block text-primary-300">Top 3% of Experts</span>
             <span className="block text-primary-400">on jobi.</span>
           </h1>
-          <p className="mt-12 text-white text-xl font-gordita">
+          <p className="mt-12 font-gordita text-xl text-white">
             We deliver blazing fast & striking work solutions
           </p>
           <form
             onSubmit={() => console.log('submit')}
             className="mt-6 flex w-full"
           >
-            <div className="bg-white rounded-l-md px-3 pt-2.5 pb-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-indigo-600">
+            <div className="rounded-l-md bg-white px-3 pt-2.5 pb-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-indigo-600">
               <label
                 htmlFor="descriptionInput"
                 className="block text-xs font-medium text-secondary-500"
@@ -53,7 +53,7 @@ const HomeBannerSection = () => {
                 </select>
               </div>
             </div>
-            <button className="bg-primary-300 rounded-r-md px-3 pt-2.5 pb-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-indigo-600 uppercase">
+            <button className="rounded-r-md bg-primary-300 px-3 pt-2.5 pb-1.5 uppercase shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-indigo-600">
               Search
             </button>
           </form>
@@ -65,12 +65,12 @@ const HomeBannerSection = () => {
         {/* Right */}
         <div className="relative">
           <div className="absolute before:content-banner-art-2"></div>
-          <div className="bg-secondary-500 h-full translate-x-4 max-w-2xl translate-y-16 overflow-visible">
+          <div className="h-full max-w-2xl translate-x-4 translate-y-16 overflow-visible bg-secondary-500">
             <img src="#" alt="" />
           </div>
         </div>
         {/* Banner Art */}
-        <div className="absolute left-0 bottom-0 before:content-banner-art translate-y-2"></div>
+        <div className="absolute left-0 bottom-0 translate-y-2 before:content-banner-art"></div>
       </div>
     </div>
   )

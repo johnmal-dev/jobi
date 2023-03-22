@@ -119,7 +119,7 @@ const Footer = () => {
         </div>
       </div>
       {/* Bottom */}
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <div>
           <Link to="/">Privacy & Terms.</Link>
           <Link to="/">Contact Us</Link>

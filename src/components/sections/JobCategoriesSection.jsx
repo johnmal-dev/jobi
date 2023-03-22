@@ -8,7 +8,7 @@ const JobCategoriesSection = () => {
     <div className="relative bg-primary-100 py-36">
       <div className="container mx-auto px-16">
         <div className="grid grid-cols-2">
-          <h3 className="relative max-w-xl font-eb-garamond text-7xl text-primary-700 after:content-job-categories-art after:absolute after:-top-10 after:right-0">
+          <h3 className="relative max-w-xl font-eb-garamond text-7xl text-primary-700 after:absolute after:-top-10 after:right-0 after:content-job-categories-art">
             Most Demanding <span className="block">Categories.</span>
           </h3>
           <div>
@@ -18,20 +18,20 @@ const JobCategoriesSection = () => {
             </p>
             <Link
               to="/"
-              className="inline-block text-primary-400 mt-7 border-b-2 border-primary-400 hover:text-primary-500 hover:border-primary-500 transition ease-in-out"
+              className="mt-7 inline-block border-b-2 border-primary-400 text-primary-400 transition ease-in-out hover:border-primary-500 hover:text-primary-500"
             >
               Explore all fields
             </Link>
           </div>
         </div>
-        <div className="my-12 flex flex-wrap justify-center items-center">
+        <div className="my-12 flex flex-wrap items-center justify-center">
           {jobData.map((category, index) => {
             return <CategoryCard key={index} category={category} />
           })}
         </div>
       </div>
       {/* Bg Art */}
-      <div className="absolute right-0 bottom-0 before:content-job-categories-art-2 translate-y-2"></div>
+      <div className="absolute right-0 bottom-0 translate-y-2 before:content-job-categories-art-2"></div>
     </div>
   )
 }
