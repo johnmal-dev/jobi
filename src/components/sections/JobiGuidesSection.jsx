@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const articles = [
   {
@@ -32,16 +33,18 @@ const JobiGuidesSection = () => {
       {/* Articles */}
       <div>
         {articles.map((article, index) => {
-          ;<div key={index}>
-            <div>
-              <img src={article.image} alt="" />
+          return (
+            <div key={index}>
+              <div>
+                <img src={article.image} alt="" />
+              </div>
+              <div>{article.category}</div>
+              <div>{article.title}</div>
+              <div>
+                By <span>{article.author}</span>
+              </div>
             </div>
-            <div>{article.category}</div>
-            <div>{article.title}</div>
-            <div>
-              By <span>{article.author}</span>
-            </div>
-          </div>
+          )
         })}
       </div>
     </div>
