@@ -25,8 +25,8 @@ const JobCategoriesSection = () => {
           </div>
         </div>
         <div className="my-12 flex flex-wrap justify-center items-center">
-          {jobData.map((category) => {
-            return <CategoryCard category={category} />
+          {jobData.map((category, index) => {
+            return <CategoryCard key={index} category={category} />
           })}
         </div>
       </div>
