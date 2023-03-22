@@ -24,24 +24,36 @@ const articles = [
 
 const JobiGuidesSection = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       {/* Top */}
-      <div>
-        <h3>Jobi Guides</h3>
-        <Link to="/">Explore More</Link>
+      <div className="flex items-center justify-between">
+        <h3 className="font-eb-garamond text-6xl text-primary-700">
+          Jobi Guides
+        </h3>
+        <Link
+          to="/"
+          className="mt-10 inline-block rounded-3xl bg-primary-300 px-10 py-3"
+        >
+          Explore More
+        </Link>
       </div>
       {/* Articles */}
-      <div>
+      <div className="mt-16 grid grid-cols-3 gap-14">
         {articles.map((article, index) => {
           return (
-            <div key={index}>
-              <div>
+            <div key={index} className="flex flex-col">
+              <div className="h-64 bg-secondary-500">
                 <img src={article.image} alt="" />
               </div>
-              <div>{article.category}</div>
-              <div>{article.title}</div>
-              <div>
-                By <span>{article.author}</span>
+              <div className="mt-9 text-black text-opacity-40">
+                {article.category}
+              </div>
+              <div className="mt-3 text-2xl font-bold">{article.title}</div>
+              <div className="mt-4 font-bold">
+                <span className="font-medium text-black text-opacity-30">
+                  By{' '}
+                </span>
+                {article.author}
               </div>
             </div>
           )
