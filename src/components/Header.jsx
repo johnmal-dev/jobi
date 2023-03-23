@@ -5,6 +5,8 @@ const Header = () => {
   return (
     <div className="bg-primary-700 font-body text-base text-secondary-100">
       <div className="relative mx-auto flex items-center justify-between px-16 py-12">
+    <div className="bg-primary-700 font-body text-base text-secondary-100">
+      <div className="relative mx-auto flex items-center justify-between px-16 py-12">
         {/* Left */}
         <div className="flex items-center justify-start">
           {/* Jobi Icon */}
@@ -17,6 +19,7 @@ const Header = () => {
           {/* Category Button */}
           <button className="mx-6 rounded-full bg-secondary-100 bg-opacity-10 px-4 py-1.5 text-primary-300 transition ease-in-out before:pr-2 before:content-category-icon hover:text-primary-100 focus:text-primary-100">
             Category
+          </button>
           </button>
           {/* Menu */}
           <ul className="mx-4 flex items-center justify-center gap-6">
