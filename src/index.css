@@ -110,3 +110,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply block rounded-full px-6 py-2 transition ease-in-out;
+  }
+  .btn-primary {
+    @apply bg-primary-300 text-primary-700 hover:bg-primary-400 focus:outline-none focus:ring-4 focus:ring-primary-300 focus:ring-opacity-50;
+  }
+  .link {
+    @apply px-2 py-1 transition;
+  }
+  .link-white {
+    @apply hover:text-primary-300;
+  }
+  .link-green {
+    @apply hover:text-white;
+  }
+}
