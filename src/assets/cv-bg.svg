@@ -6,6 +6,10 @@
 <g mask="url(#mask0_519_7638)">
 <circle cx="1360" cy="578" r="197" fill="white" fill-opacity="0.14"/>
 <circle cx="3.5" cy="10.5" r="77.5" fill="white" fill-opacity="0.14"/>
-<rect x="98" y="83" width="449" height="457" fill="#D9D9D9" fill-opacity="0.5"/>
+<path d="M148.44 189.297C144.976 186.897 120.848 170.62 120.012 172.068" stroke="#72B297" stroke-width="3" stroke-linecap="round"/>
+<path d="M155.132 183.363L152.544 173.704" stroke="#72B297" stroke-width="2" stroke-linecap="round"/>
+<path d="M475 233.673C494.227 199.177 516.709 165.414 532.96 129.408C533.865 127.404 530.89 133.327 530.311 135.447" stroke="#72B297" stroke-width="2" stroke-linecap="round"/>
+<path d="M504.563 226.997C510.056 222.968 514.513 217.773 518.867 212.692" stroke="#72B297" stroke-width="2" stroke-linecap="round"/>
+<path d="M499.795 266.096C507.502 267.588 515.085 269.878 522.683 271.818" stroke="#72B297" stroke-width="2" stroke-linecap="round"/>
 </g>
 </svg>

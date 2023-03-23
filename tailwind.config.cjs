@@ -45,6 +45,9 @@ module.exports = {
       borderRadius: {
         '4xl': '60px',
       },
+      backgroundImage: {
+        'cv-section': "url('./assets/cv-bg.svg')",
+      },
     },
   },
   variants: {
