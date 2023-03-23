@@ -3,15 +3,15 @@ import React from 'react'
 const HomeBannerSection = () => {
   return (
     <div className="relative bg-primary-700 pt-6">
-      <div className="container mx-auto grid grid-cols-2 px-16">
+      <div className="container grid grid-cols-2">
         {/* Left */}
         <div className="py-24">
-          <h1 className="font-eb-garamond text-8xl">
+          <h1 className="font-heading text-8xl">
             <span className="block text-white">Find & Hire</span>
             <span className="block text-primary-300">Top 3% of Experts</span>
             <span className="block text-primary-400">on jobi.</span>
           </h1>
-          <p className="mt-12 font-gordita text-xl text-white">
+          <p className="mt-12 font-body text-xl text-white">
             We deliver blazing fast & striking work solutions
           </p>
           <form

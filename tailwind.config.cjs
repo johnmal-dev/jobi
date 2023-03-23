@@ -7,6 +7,17 @@ module.exports = {
   ],
   darkMode: 'media', // or 'media' or 'class'
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '2rem',
+        sm: '3rem',
+        md: '4rem',
+        lg: '6rem',
+        xl: '8rem',
+        '2xl': '11rem',
+      },
+    },
     extend: {
       colors: {
         primary: {
@@ -25,8 +36,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        'eb-garamond': ['EB Garamond', 'serif'],
-        gordita: ['Gordita Regular', 'sans-serif'],
+        heading: ['EB Garamond', 'serif'],
+        body: ['Gordita Regular', 'sans-serif'],
       },
       content: {
         'category-icon': 'url("./assets/category-icon.svg")',

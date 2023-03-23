@@ -6,7 +6,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="font-gordita text-secondary-900">
+    <div className="font-body text-secondary-900">
       <Header />
       <Main />
       <Footer />

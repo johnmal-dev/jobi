@@ -5,10 +5,10 @@ import nextArrow from '../../assets/next-arrow.svg'
 const ExpertSection = () => {
   return (
     <div className="bg-white">
-      <div className="container mx-auto px-24 py-48">
+      <div className="container py-48">
         {/* Top */}
         <div className="flex items-center justify-between">
-          <h3 className="relative max-w-2xl font-eb-garamond text-7xl text-primary-700 after:absolute after:-top-14 after:-right-6 after:content-job-categories-art">
+          <h3 className="relative max-w-2xl font-heading text-7xl text-primary-700 after:absolute after:-top-14 after:-right-6 after:content-job-categories-art">
             Find the best talented experts on jobi.
           </h3>
           {/* buttons */}

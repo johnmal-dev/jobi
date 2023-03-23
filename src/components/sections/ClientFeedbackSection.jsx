@@ -63,10 +63,10 @@ const partners = [
 const ClientFeedbackSection = () => {
   return (
     <div>
-      <div className="container mx-auto">
+      <div className="container">
         {/* Top */}
         <div className="flex items-center justify-between">
-          <h3 className="font-eb-garamond text-7xl">
+          <h3 className="font-heading text-7xl">
             Trusted by leading startups.
           </h3>
           {/* buttons */}

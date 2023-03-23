@@ -2,12 +2,12 @@ import React from 'react'
 
 const UploadCVSection = () => {
   return (
-    <div className="container relative mx-auto my-24 flex items-center justify-center overflow-hidden bg-cv-section bg-cover bg-center bg-no-repeat p-14 text-white">
+    <div className="container relative mx-auto my-24 flex items-center justify-center overflow-hidden bg-cv-section bg-cover bg-center bg-no-repeat text-white">
       {/* Left */}
       <div className="flex-1"></div>
       {/* Right */}
       <div className="flex-1 space-y-8">
-        <h3 className="font-eb-garamond text-6xl">
+        <h3 className="font-heading text-6xl">
           Get your <span className="text-primary-300">Matched Jobs</span> in a
           few minutes.
         </h3>

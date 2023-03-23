@@ -6,8 +6,8 @@ import applyIcon from '../../assets/apply-icon.svg'
 const HowItWorksSection = () => {
   return (
     <div className="bg-primary-700 text-center text-white">
-      <div className="container mx-auto flex flex-col items-center justify-center">
-        <h3 className="relative mt-28 font-eb-garamond text-7xl after:absolute after:-top-12 after:-right-24 after:content-job-categories-art">
+      <div className="container flex flex-col items-center justify-center">
+        <h3 className="relative mt-28 font-heading text-7xl after:absolute after:-top-12 after:-right-24 after:content-job-categories-art">
           How it works
         </h3>
         <div className="my-24 flex justify-center gap-36">
