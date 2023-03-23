@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FaFacebookF, FaInstagram, FaPinterestP } from 'react-icons/fa'
 
 const footerCategories = [
   {
@@ -77,30 +78,48 @@ const footerCategories = [
 
 const Footer = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       {/* Top */}
-      <div>
+      <div className="flex items-center justify-between border-b border-secondary-400 pb-16">
         {/* Text */}
         <div>
-          <h3>Most complete job portal.</h3>
-          <p>Signup and start find your job or talents</p>
+          <h3 className="font-eb-garamond text-5xl">
+            Most complete job portal.
+          </h3>
+          <p className="mt-2 text-xl font-normal text-black text-opacity-60">
+            Signup and start find your job or talents.
+          </p>
         </div>
         {/* Buttons */}
-        <button>Looking for job?</button>
-        <button>Post a job</button>
+        <div>
+          <button className="mr-7 rounded-md border border-primary-700 py-4 px-7 text-primary-700">
+            Looking for job?
+          </button>
+          <button className="rounded-md border border-primary-300 bg-primary-300 py-4 px-7 text-primary-700">
+            Post a job
+          </button>
+        </div>
       </div>
       {/* Middle */}
-      <div className="grid grid-cols-5">
-        <div>Logo</div>
+      <div className="my-20 grid grid-cols-5">
+        {/* Jobi Icon */}
+        <div className="font-eb-garamond text-4xl before:pr-2 before:content-jobi-icon">
+          jobi
+        </div>
         {footerCategories.map((category) => {
           return (
             <div>
-              <h4>{category.name}</h4>
-              <ul>
+              <h4 className="text-2xl font-bold">{category.name}</h4>
+              <ul className="mt-6">
                 {category.links.map((link) => {
                   return (
-                    <li>
-                      <Link to={link.url}>{link.text}</Link>
+                    <li className="mt-6">
+                      <Link
+                        to={link.url}
+                        className="text-black text-opacity-70"
+                      >
+                        {link.text}
+                      </Link>
                     </li>
                   )
                 })}
@@ -109,31 +128,47 @@ const Footer = () => {
           )
         })}
         <div>
-          <h4>Newsletter</h4>
-          <div>Join & get important news regularly</div>
-          <form>
-            <input type="text" />
-            <button>Send</button>
+          <h4 className="text-2xl font-bold">Newsletter</h4>
+          <div className="mt-6">Join & get important news regularly</div>
+          <form className="mt-6">
+            <div className="flex rounded-lg bg-secondary-100 p-2 shadow-sm ring-1 ring-inset ring-secondary-100 focus-within:ring-2 focus-within:ring-primary-300">
+              <input
+                type="text"
+                placeholder="Enter your email"
+                className="flex-1 border-none bg-transparent pr-0 placeholder-black placeholder-opacity-25 focus:ring-0"
+              />
+              <button className="rounded-md bg-primary-700 p-2 text-white focus:border-none focus:outline-none focus:ring-2">
+                Send
+              </button>
+            </div>
           </form>
-          <div>We only send interesting and relevent emails.</div>
+          <div className="mt-4 text-sm text-secondary-900 text-opacity-50">
+            We only send interesting and relevent emails.
+          </div>
         </div>
       </div>
       {/* Bottom */}
-      <div className="flex items-center justify-between">
-        <div>
+      <div className="grid grid-cols-3">
+        <div className="space-x-6 text-left font-bold">
           <Link to="/">Privacy & Terms.</Link>
           <Link to="/">Contact Us</Link>
         </div>
-        <div>Copyright @2023 jobi inc.</div>
-        <ul className="flex gap-4">
+        <div className="text-center">Copyright @2023 jobi inc.</div>
+        <ul className="justify-right ml-auto flex items-center gap-4">
           <li>
-            <Link to="/">f</Link>
+            <Link to="/">
+              <FaFacebookF />
+            </Link>
           </li>
           <li>
-            <Link to="/">i</Link>
+            <Link to="/">
+              <FaInstagram />
+            </Link>
           </li>
           <li>
-            <Link to="/">p</Link>
+            <Link to="/">
+              <FaPinterestP />
+            </Link>
           </li>
         </ul>
       </div>

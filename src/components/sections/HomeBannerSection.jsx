@@ -18,7 +18,7 @@ const HomeBannerSection = () => {
             onSubmit={() => console.log('submit')}
             className="mt-6 flex w-full"
           >
-            <div className="rounded-l-md bg-white px-3 pt-2.5 pb-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-indigo-600">
+            <div className="rounded-l-md bg-white px-3 pt-2.5 pb-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-primary-300">
               <label
                 htmlFor="descriptionInput"
                 className="block text-xs font-medium text-secondary-500"
@@ -33,7 +33,7 @@ const HomeBannerSection = () => {
                 placeholder="Jane Smith"
               />
             </div>
-            <div className="bg-white px-3 pt-2.5 pb-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-indigo-600">
+            <div className="bg-white px-3 pt-2.5 pb-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-primary-300">
               <div>
                 <label
                   htmlFor="categorySelect"
