@@ -1,21 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assets/jobi-icon.svg'
 
 const Header = () => {
   return (
-    <div className="bg-primary-700 font-gordita text-base text-secondary-100">
-      <div className="container relative mx-auto flex items-center justify-between pt-12">
+    <div className="bg-primary-700 font-body text-base text-secondary-100">
+      <div className="relative mx-auto flex items-center justify-between px-16 py-12">
         {/* Left */}
         <div className="flex items-center justify-start">
           {/* Jobi Icon */}
-          <div className="font-eb-garamond text-4xl before:pr-2 before:content-jobi-icon">
+          <div className="font-heading text-4xl before:pr-2 before:content-jobi-icon">
             jobi
           </div>
           {/* Category Button */}
-          <div className="mx-6 rounded-full bg-secondary-100 bg-opacity-10 px-4 py-1 text-primary-300 before:pr-2 before:content-category-icon">
+          <button className="mx-6 rounded-full bg-secondary-100 bg-opacity-10 px-4 py-1.5 text-primary-300 before:pr-2 before:content-category-icon">
             Category
-          </div>
+          </button>
           {/* Menu */}
           <ul className="mx-4 flex items-center justify-center gap-6">
             <li>
@@ -46,7 +45,7 @@ const Header = () => {
           </div>
         </div>
         {/* Header Art */}
-        <div className="absolute left-2/3 before:content-header-art"></div>
+        <div className="absolute left-2/3 -translate-x-36 before:content-header-art"></div>
       </div>
     </div>
   )

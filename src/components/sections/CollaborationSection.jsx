@@ -5,7 +5,7 @@ import art2 from '../../assets/job-categories-art.svg'
 
 const CollaborationSection = () => {
   return (
-    <div className="container mx-auto my-36">
+    <div className="container my-36">
       <div className="flex items-center justify-center gap-32">
         {/* Left */}
         <div className="relative flex-1">
@@ -21,7 +21,7 @@ const CollaborationSection = () => {
           <div className="text-xs uppercase text-black text-opacity-20">
             Top Brand
           </div>
-          <h3 className="font-eb-garamond text-6xl text-primary-700">
+          <h3 className="font-heading text-6xl text-primary-700">
             Collaboration with Top Brands.
           </h3>
           <p className="text-2xl leading-10 text-black text-opacity-70">

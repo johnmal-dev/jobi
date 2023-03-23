@@ -5,12 +5,12 @@ import image from '../../assets/get-talented-experts-image.svg'
 const GetTalentedExpertsSection = () => {
   return (
     <div className="bg-white">
-      <div className="container mx-auto grid grid-cols-2 p-44">
+      <div className="container grid grid-cols-2 py-44">
         <div>
           <img src={image} alt="" className="h-full" />
         </div>
         <div className="py-12">
-          <h3 className="max-w-lg font-eb-garamond text-7xl text-primary-700">
+          <h3 className="max-w-lg font-heading text-7xl text-primary-700">
             Get over 50,000+ talented experts on jobi.
           </h3>
           <p className="mt-8 text-lg leading-9 text-black text-opacity-70">

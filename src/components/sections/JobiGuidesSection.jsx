@@ -24,12 +24,10 @@ const articles = [
 
 const JobiGuidesSection = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container">
       {/* Top */}
       <div className="flex items-center justify-between">
-        <h3 className="font-eb-garamond text-6xl text-primary-700">
-          Jobi Guides
-        </h3>
+        <h3 className="font-heading text-6xl text-primary-700">Jobi Guides</h3>
         <Link
           to="/"
           className="mt-10 inline-block rounded-3xl bg-primary-300 px-10 py-3"

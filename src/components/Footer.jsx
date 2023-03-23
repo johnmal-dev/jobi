@@ -78,14 +78,12 @@ const footerCategories = [
 
 const Footer = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container">
       {/* Top */}
       <div className="flex items-center justify-between border-b border-secondary-400 pb-16">
         {/* Text */}
         <div>
-          <h3 className="font-eb-garamond text-5xl">
-            Most complete job portal.
-          </h3>
+          <h3 className="font-heading text-5xl">Most complete job portal.</h3>
           <p className="mt-2 text-xl font-normal text-black text-opacity-60">
             Signup and start find your job or talents.
           </p>
@@ -103,7 +101,7 @@ const Footer = () => {
       {/* Middle */}
       <div className="my-20 grid grid-cols-5">
         {/* Jobi Icon */}
-        <div className="font-eb-garamond text-4xl before:pr-2 before:content-jobi-icon">
+        <div className="font-heading text-4xl before:pr-2 before:content-jobi-icon">
           jobi
         </div>
         {footerCategories.map((category) => {
