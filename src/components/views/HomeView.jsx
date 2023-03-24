@@ -11,7 +11,7 @@ import UploadCVSection from '../sections/UploadCVSection'
 
 const HomeView = () => {
   return (
-    <div>
+    <>
       <HomeBannerSection />
       <JobCategoriesSection />
       <GetTalentedExpertsSection />
@@ -21,7 +21,7 @@ const HomeView = () => {
       <CollaborationSection />
       <JobiGuidesSection />
       <UploadCVSection />
-    </div>
+    </>
   )
 }
 

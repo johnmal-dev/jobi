@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: [
     // Example content paths...
@@ -7,6 +10,10 @@ module.exports = {
   ],
   darkMode: 'media', // or 'media' or 'class'
   theme: {
+    screens: {
+      xs: '475px',
+      ...defaultTheme.screens,
+    },
     container: {
       center: true,
       padding: {
@@ -22,6 +29,7 @@ module.exports = {
       colors: {
         primary: {
           100: '#e9f2ef',
+          200: '#f2f9d8',
           300: '#d2f34c',
           400: '#9fb448',
           450: '#81B197',
