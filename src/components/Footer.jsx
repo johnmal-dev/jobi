@@ -104,14 +104,14 @@ const Footer = () => {
         <div className="font-heading text-4xl before:pr-2 before:content-jobi-icon">
           jobi
         </div>
-        {footerCategories.map((category) => {
+        {footerCategories.map((category, index) => {
           return (
-            <div>
+            <div key={index}>
               <h4 className="text-2xl font-bold">{category.name}</h4>
               <ul className="mt-6">
-                {category.links.map((link) => {
+                {category.links.map((link, index) => {
                   return (
-                    <li className="mt-6">
+                    <li key={index} className="mt-6">
                       <Link
                         to={link.url}
                         className="text-black text-opacity-70"
