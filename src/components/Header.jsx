@@ -32,16 +32,16 @@ export default function Header() {
                       Category
                     </button>
                     <Link
-                      to="#"
+                      to="/"
                       className="rounded-full px-3 py-2 font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                     >
                       Home
                     </Link>
                     <Link
-                      to="#"
+                      to="/jobs"
                       className="rounded-full px-3 py-2 font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                     >
-                      Job
+                      Jobs
                     </Link>
                     <Link
                       to="#"
@@ -180,17 +180,17 @@ export default function Header() {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/"
                 className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
               >
                 Home
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/jobs"
                 className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
               >
-                Job
+                Jobs
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
