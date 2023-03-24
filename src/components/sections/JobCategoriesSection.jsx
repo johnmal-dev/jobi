@@ -5,7 +5,7 @@ import jobData from '../../data/categories'
 
 const JobCategoriesSection = () => {
   return (
-    <div className="relative bg-primary-100 py-36">
+    <div className="relative -z-20 bg-primary-100 py-36">
       <div className="container">
         <div className="grid grid-cols-2">
           <h3 className="relative max-w-xl font-heading text-7xl text-primary-700 after:absolute after:-top-10 after:right-0 after:content-job-categories-art">

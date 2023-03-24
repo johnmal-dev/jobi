@@ -11,11 +11,11 @@ module.exports = {
       center: true,
       padding: {
         DEFAULT: '2rem',
-        sm: '3rem',
-        md: '4rem',
-        lg: '6rem',
-        xl: '8rem',
-        '2xl': '11rem',
+        // sm: '2rem',
+        // md: '2rem',
+        // lg: '3rem',
+        // xl: '6rem',
+        // '2xl': '3rem',
       },
     },
     extend: {
