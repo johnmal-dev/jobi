@@ -3,7 +3,7 @@ import React from 'react'
 const HomeBannerSection = () => {
   return (
     <div className="relative bg-primary-700 pt-0 lg:pt-6">
-      <div className="container relative flex flex-col py-12 lg:py-24">
+      <div className="container relative flex flex-col pt-12 pb-16 lg:pt-24 lg:pb-40">
         <h1 className="z-20 font-heading text-5xl sm:text-7xl md:text-8xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
           <span className="block text-white">Find & Hire</span>
           <span className="block text-primary-300">Top 3% of Experts</span>
@@ -64,6 +64,7 @@ const HomeBannerSection = () => {
           <div className="absolute top-0 right-0 z-0 w-1/2 -translate-x-32 scale-75 before:absolute before:w-full before:content-banner-art-2 xl:-translate-x-16 xl:scale-100"></div>
         </div>
       </div>
+      <div className="absolute left-0 bottom-0 hidden content-banner-art lg:block"></div>
     </div>
   )
 }
