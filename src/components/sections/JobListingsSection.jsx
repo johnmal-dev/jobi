@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import {
@@ -10,6 +10,9 @@ import {
 } from '@heroicons/react/20/solid'
 import FilterDropdown from '../FilterDropdown'
 import FilterInput from '../FilterInput'
+import { getDatabase, ref, onValue } from 'firebase/database'
+import app from '../../database/firebase'
+import JobsGridSection from './JobsGridSection'
 
 const sortOptions = [
   { name: 'Latest', href: '#', current: true },
@@ -79,6 +82,21 @@ function classNames(...classes) {
 
 export default function JobListingsSection() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+  const [jobsList, setJobsList] = useState([])
+
+  useEffect(() => {
+    const db = getDatabase(app)
+    const jobsRef = ref(db, '/jobs')
+    onValue(jobsRef, (snapshot) => {
+      const data = snapshot.val()
+      const arr = []
+      for (const key in data) {
+        arr.push({ key, ...data[key] })
+      }
+      console.log('jobslist', arr)
+      setJobsList(arr)
+    })
+  }, [])
 
   return (
     <div className="bg-white">
@@ -354,7 +372,9 @@ export default function JobListingsSection() {
               </form>
 
               {/* Product grid */}
-              <div className="lg:col-span-3">{/* Your content */}</div>
+              <div className="lg:col-span-3">
+                <JobsGridSection jobsList={jobsList} />
+              </div>
             </div>
           </section>
         </main>
