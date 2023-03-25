@@ -33,13 +33,13 @@ export default function Header() {
                     </button>
                     <Link
                       to="/"
-                      className="rounded-full px-3 py-2 font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
+                      className="rounded-full px-3 py-2 font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                     >
                       Home
                     </Link>
                     <Link
                       to="/jobs"
-                      className="rounded-full px-3 py-2 font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
+                      className="rounded-full px-3 py-2 font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                     >
                       Jobs
                     </Link>
@@ -79,7 +79,7 @@ export default function Header() {
                 <div className="flex items-center">
                   {/* Profile dropdown */}
                   {isLoggedIn ? (
-                    <Menu as="div" className="relative ml-4 flex-shrink-0">
+                    <Menu as="div" className="relative z-50 ml-4 flex-shrink-0">
                       <div>
                         <Menu.Button className="flex rounded-full bg-primary-700 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                           <span className="sr-only">Open user menu</span>
@@ -153,7 +153,7 @@ export default function Header() {
                       </Link>
                       <Link
                         to="/"
-                        className="link link-white mx-2 block px-2 text-white"
+                        className="link link-white mx-2 block px-2 text-white underline"
                         onClick={() => setIsLoggedIn(true)}
                       >
                         Login

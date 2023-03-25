@@ -7,11 +7,11 @@ const HowItWorksSection = () => {
   return (
     <div className="bg-primary-700 text-center text-white">
       <div className="container flex flex-col items-center justify-center">
-        <h3 className="relative mt-28 font-heading text-7xl after:absolute after:-top-12 after:-right-24 after:content-job-categories-art">
+        <h3 className="relative mt-28 font-heading text-7xl after:absolute after:-top-12 after:-right-24 after:content-none sm:after:content-job-categories-art">
           How it works
         </h3>
-        <div className="my-24 flex justify-center gap-36">
-          <div className="relative flex flex-col items-center justify-center after:absolute after:right-0 after:top-0 after:translate-x-36 after:content-arrow">
+        <div className="my-12 flex flex-col items-center justify-center gap-16 md:my-24 md:flex-row md:gap-36">
+          <div className="relative flex max-w-sm flex-col items-center justify-center after:absolute after:right-0 after:top-0 after:translate-x-36 after:content-none md:after:content-arrow">
             <div className="m-8 flex h-20 w-20 items-center justify-center rounded-full bg-primary-300">
               <img src={accountIcon} alt="" />
             </div>
@@ -20,7 +20,7 @@ const HowItWorksSection = () => {
               It's very easy to open an account and start your journey.
             </p>
           </div>
-          <div className="relative flex flex-col items-center justify-center after:absolute after:right-0 after:top-0 after:translate-x-36 after:content-arrow">
+          <div className="relative flex max-w-sm flex-col items-center justify-center after:absolute after:right-0 after:top-0 after:translate-x-36 after:content-none md:after:content-arrow">
             <div className="m-8 flex h-20 w-20 items-center justify-center rounded-full bg-primary-300">
               <img src={profileIcon} alt="" />
             </div>
@@ -30,7 +30,7 @@ const HowItWorksSection = () => {
               client.
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex max-w-sm flex-col items-center justify-center">
             <div className="m-8 flex h-20 w-20 items-center justify-center rounded-full bg-primary-300">
               <img src={applyIcon} alt="" />
             </div>

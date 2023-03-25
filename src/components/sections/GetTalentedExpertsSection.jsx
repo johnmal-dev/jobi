@@ -5,12 +5,12 @@ import image from '../../assets/get-talented-experts-image.svg'
 const GetTalentedExpertsSection = () => {
   return (
     <div className="bg-white">
-      <div className="container grid grid-cols-2 py-44">
-        <div>
+      <div className="container grid grid-cols-1 py-20 lg:grid-cols-2 lg:py-44">
+        <div className="m-auto w-full sm:w-3/4 lg:w-full">
           <img src={image} alt="" className="h-full" />
         </div>
         <div className="py-12">
-          <h3 className="max-w-lg font-heading text-7xl text-primary-700">
+          <h3 className="max-w-lg font-heading text-4xl text-primary-700 xs:text-5xl sm:text-7xl">
             Get over 50,000+ talented experts on jobi.
           </h3>
           <p className="mt-8 text-lg leading-9 text-black text-opacity-70">
@@ -30,7 +30,7 @@ const GetTalentedExpertsSection = () => {
           </ul>
           <Link
             to="/"
-            className="mt-10 inline-block rounded-3xl bg-primary-300 px-10 py-3"
+            className="mx-auto mt-10 block rounded-3xl bg-primary-300 px-10 py-3 text-center xs:inline-block"
           >
             Post a Job
           </Link>
