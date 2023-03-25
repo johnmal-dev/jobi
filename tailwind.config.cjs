@@ -60,6 +60,7 @@ module.exports = {
         'profile-icon': 'url("./assets/profile-icon.svg")',
         'apply-icon': 'url("./assets/apply-icon.svg")',
         arrow: 'url("./assets/arrow.svg")',
+        'check-icon': 'url("./assets/check-icon.svg")',
       },
       borderRadius: {
         '4xl': '60px',
