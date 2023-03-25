@@ -297,7 +297,7 @@ export default function JobListingsSection() {
               Products
             </h2>
 
-            <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
+            <div className="grid grid-cols-1 items-start gap-x-8 gap-y-10 lg:grid-cols-4">
               {/* Filters */}
               <form className="hidden rounded-md bg-primary-100 p-4 lg:flex lg:flex-col lg:gap-4">
                 <h3 className="sr-only">Categories</h3>
