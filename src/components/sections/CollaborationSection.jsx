@@ -1,30 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import art1 from '../../assets/collaboration.svg'
-import art2 from '../../assets/job-categories-art.svg'
 
 const CollaborationSection = () => {
   return (
-    <div className="container my-36">
-      <div className="flex items-center justify-center gap-32">
+    <div className="container my-24 xl:my-36">
+      <div className="flex flex-col items-center justify-center gap-12 sm:gap-24 lg:flex-row lg:gap-32">
         {/* Left */}
-        <div className="relative flex-1">
-          <img src={art1} alt="" />
-          <img
-            src={art2}
-            alt=""
-            className="absolute bottom-1/2 right-0 -translate-x-3/4 translate-y-full"
-          />
+        <div className="flex flex-1 items-center justify-center">
+          <img src={art1} alt="" className="w-3/4 lg:w-full" />
         </div>
         {/* Right */}
         <div className="flex flex-1 flex-col gap-12">
           <div className="text-xs uppercase text-black text-opacity-20">
             Top Brand
           </div>
-          <h3 className="font-heading text-6xl text-primary-700">
+          <h3 className="text-center font-heading text-5xl text-primary-700 sm:text-left lg:text-6xl">
             Collaboration with Top Brands.
           </h3>
-          <p className="text-2xl leading-10 text-black text-opacity-70">
+          <p className="text-xl leading-10 text-black text-opacity-70 lg:text-2xl">
             We collaborate with a number of top tier companies on imagining the
             future of work, have a look.
           </p>
