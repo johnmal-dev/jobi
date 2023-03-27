@@ -44,10 +44,10 @@ export default function Header() {
                       Jobs
                     </Link>
                     <Link
-                      to="#"
-                      className="rounded-full px-3 py-2 font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
+                      to="/jobs/new"
+                      className="rounded-full px-3 py-2 font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                     >
-                      Explore
+                      Post New Job
                     </Link>
                     <Link
                       to="#"
@@ -158,7 +158,7 @@ export default function Header() {
                       >
                         Login
                       </Link>
-                      <Link to="/" className="btn btn-primary block">
+                      <Link to="/jobs/new" className="btn btn-primary block">
                         Hire Top Talents
                       </Link>
                     </>
@@ -194,10 +194,10 @@ export default function Header() {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/jobs/new"
                 className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
               >
-                Explore
+                Post New Job
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
