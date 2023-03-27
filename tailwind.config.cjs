@@ -61,6 +61,9 @@ module.exports = {
         'apply-icon': 'url("./assets/apply-icon.svg")',
         arrow: 'url("./assets/arrow.svg")',
         'check-icon': 'url("./assets/check-icon.svg")',
+        'paper-icon': 'url("./assets/paper-icon.svg")',
+        'credit-card-icon': 'url("./assets/credit-card-icon.svg")',
+        'tick-square-icon': 'url("./assets/tick-square-icon.svg")',
       },
       borderRadius: {
         '4xl': '60px',
@@ -73,5 +76,8 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/aspect-ratio')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }
