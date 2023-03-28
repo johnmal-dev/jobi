@@ -1,5 +1,11 @@
+import React, { useContext } from 'react'
+
 import { auth } from '../database/firebase'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from 'firebase/auth'
 import { getDatabase, ref, update, push } from 'firebase/database'
 import app from '../database/firebase'
 
@@ -8,12 +14,33 @@ const registerService = (email, password) => {
     .then((userCredential) => {
       // Signed up user
       const user = userCredential.user
-      console.log(user)
+      console.log('register successful', user)
     })
-    .catch((error) => {
+    .catch((err) => {
       // Handle errors
-      console.log(error)
+      console.log(err)
     })
+}
+
+const loginService = (email, password) => {
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed up user
+      const user = userCredential.user
+      console.log('login successful', user)
+    })
+    .catch((err) => {
+      // Handle errors
+      console.log(err)
+    })
+}
+
+const logoutService = async () => {
+  try {
+    await auth.signOut()
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 const addJobService = (job) => {
@@ -29,4 +56,4 @@ const addJobService = (job) => {
     })
 }
 
-export { registerService, addJobService }
+export { registerService, addJobService, loginService, logoutService }

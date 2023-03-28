@@ -1,15 +1,19 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import profileIcon from '../assets/profile-icon.png'
+import UserContext from './context/UserContext'
+import { logoutService } from '../utils/services'
+import UserIcon from './UserIcon'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Header() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const { currentUser } = useContext(UserContext)
+
   return (
     <Disclosure as="nav" className="relative bg-primary-700">
       {({ open }) => (
@@ -78,16 +82,12 @@ export default function Header() {
               <div className="hidden xl:ml-4 xl:block">
                 <div className="flex items-center">
                   {/* Profile dropdown */}
-                  {isLoggedIn ? (
+                  {currentUser ? (
                     <Menu as="div" className="relative z-50 ml-4 flex-shrink-0">
                       <div>
                         <Menu.Button className="flex rounded-full bg-primary-700 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                           <span className="sr-only">Open user menu</span>
-                          <img
-                            className="h-10 w-10 rounded-full"
-                            src={profileIcon}
-                            alt=""
-                          />
+                          <UserIcon user={currentUser} />
                         </Menu.Button>
                       </div>
                       <Transition
@@ -134,7 +134,7 @@ export default function Header() {
                                   active ? 'bg-gray-100' : '',
                                   'block px-4 py-2 text-sm text-gray-700'
                                 )}
-                                onClick={() => setIsLoggedIn(false)}
+                                onClick={logoutService}
                               >
                                 Sign out
                               </Link>
@@ -146,15 +146,15 @@ export default function Header() {
                   ) : (
                     <>
                       <Link
-                        to="/"
-                        className="link-white link mx-2 block border-r border-secondary-100 border-opacity-25 pr-4 text-white"
+                        to="/register"
+                        className="link-white link mx-2 block border-r border-secondary-100 border-opacity-25 pr-4 text-white underline"
                       >
                         Register
                       </Link>
                       <Link
-                        to="/"
+                        to="/login"
                         className="link link-white mx-2 block px-2 text-white underline"
-                        onClick={() => setIsLoggedIn(true)}
+                        // onClick={() => setIsLoggedIn(true)}
                       >
                         Login
                       </Link>
@@ -213,35 +213,31 @@ export default function Header() {
               >
                 Pages
               </Disclosure.Button>
-              {!isLoggedIn && (
+              {!currentUser && (
                 <>
                   <Disclosure.Button
                     as="a"
-                    href="#"
-                    className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
+                    href="/register"
+                    className="block rounded-full px-3 py-2 text-base font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                   >
                     Register
                   </Disclosure.Button>
                   <Disclosure.Button
                     as="a"
-                    href="#"
+                    href="/login"
                     className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
-                    onClick={() => setIsLoggedIn(true)}
+                    // onClick={() => setIsLoggedIn(true)}
                   >
                     Login
                   </Disclosure.Button>
                 </>
               )}
             </div>
-            {isLoggedIn && (
+            {currentUser && (
               <div className="border-t border-gray-700 pt-4 pb-3">
                 <div className="flex items-center px-5">
                   <div className="flex-shrink-0">
-                    <img
-                      className="h-12 w-12 rounded-full"
-                      src={profileIcon}
-                      alt=""
-                    />
+                    <UserIcon user={currentUser} />
                   </div>
                   <div className="ml-3">
                     <div className="text-base font-medium text-white">
@@ -277,7 +273,7 @@ export default function Header() {
                     as="a"
                     href="#"
                     className="block rounded-full px-3 py-2 text-base font-medium text-primary-100 hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
-                    onClick={() => setIsLoggedIn(false)}
+                    onClick={logoutService}
                   >
                     Sign out
                   </Disclosure.Button>
