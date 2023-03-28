@@ -1,8 +1,7 @@
-import { Fragment, useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Fragment, useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import profileIcon from '../assets/profile-icon.png'
 import UserContext from './context/UserContext'
 import { logoutService } from '../utils/services'
 import UserIcon from './UserIcon'
@@ -13,6 +12,7 @@ function classNames(...classes) {
 
 export default function Header() {
   const { currentUser } = useContext(UserContext)
+  const navigate = useNavigate()
 
   return (
     <Disclosure as="nav" className="relative bg-primary-700">
@@ -170,45 +170,37 @@ export default function Header() {
 
           <Disclosure.Panel className="xl:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
-              {/* Current: "bg-gray-900 text-white", Default: "text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300" */}
               <Disclosure.Button
-                as="a"
-                href="#"
-                className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
-              >
-                Category
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/"
-                className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
+                as={Link}
+                to="/"
+                className="block rounded-full px-3 py-2 text-base font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
               >
                 Home
               </Disclosure.Button>
               <Disclosure.Button
-                as="a"
-                href="/jobs"
-                className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
+                as={Link}
+                to="/jobs"
+                className="block rounded-full px-3 py-2 text-base font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
               >
                 Jobs
               </Disclosure.Button>
               <Disclosure.Button
-                as="a"
-                href="/jobs/new"
-                className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
+                as={Link}
+                to="/jobs/new"
+                className="block rounded-full px-3 py-2 text-base font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
               >
                 Post New Job
               </Disclosure.Button>
               <Disclosure.Button
-                as="a"
-                href="#"
+                as={Link}
+                to="/"
                 className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
               >
                 Contact
               </Disclosure.Button>
               <Disclosure.Button
-                as="a"
-                href="#"
+                as={Link}
+                to="/"
                 className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
               >
                 Pages
@@ -216,16 +208,16 @@ export default function Header() {
               {!currentUser && (
                 <>
                   <Disclosure.Button
-                    as="a"
-                    href="/register"
+                    as={Link}
+                    to="/register"
                     className="block rounded-full px-3 py-2 text-base font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                   >
                     Register
                   </Disclosure.Button>
                   <Disclosure.Button
-                    as="a"
-                    href="/login"
-                    className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
+                    as={Link}
+                    to="/login"
+                    className="block rounded-full px-3 py-2 text-base font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                     // onClick={() => setIsLoggedIn(true)}
                   >
                     Login
@@ -256,22 +248,22 @@ export default function Header() {
                 </div>
                 <div className="mt-3 space-y-1 px-2">
                   <Disclosure.Button
-                    as="a"
-                    href="#"
+                    as={Link}
+                    to="#"
                     className="block rounded-full px-3 py-2 text-base font-medium text-primary-100 hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                   >
                     Your Profile
                   </Disclosure.Button>
                   <Disclosure.Button
-                    as="a"
-                    href="#"
+                    as={Link}
+                    to="#"
                     className="block rounded-full px-3 py-2 text-base font-medium text-primary-100 hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                   >
                     Settings
                   </Disclosure.Button>
                   <Disclosure.Button
-                    as="a"
-                    href="#"
+                    as={Link}
+                    to="#"
                     className="block rounded-full px-3 py-2 text-base font-medium text-primary-100 hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                     onClick={logoutService}
                   >

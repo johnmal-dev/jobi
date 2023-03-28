@@ -1,10 +1,7 @@
-import React, { useContext } from 'react'
-
 import { auth } from '../database/firebase'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut,
 } from 'firebase/auth'
 import { getDatabase, ref, update, push } from 'firebase/database'
 import app from '../database/firebase'
