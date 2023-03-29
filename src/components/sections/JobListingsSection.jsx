@@ -25,11 +25,6 @@ const sortOptions = [
   { name: 'Relevance', href: '#', current: false },
 ]
 
-const keywordsInput = {
-  id: 'keywords',
-  placeholder: 'Search by Keywords',
-  label: 'Keywords',
-}
 const locationInput = {
   id: 'location',
   placeholder: 'Enter location',
@@ -42,7 +37,8 @@ function classNames(...classes) {
 
 export default function JobListingsSection() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
-  const { setJobsList } = useContext(AppContext)
+  const { setJobsList, filter, setFilter, jobsList, setFilteredJobsList } =
+    useContext(AppContext)
 
   useEffect(() => {
     const db = getDatabase(app)
@@ -56,6 +52,16 @@ export default function JobListingsSection() {
       setJobsList(arr)
     })
   }, [])
+
+  useEffect(() => {
+    const filteredList = jobsList.filter((job) => {
+      return (
+        job.title.toLowerCase().includes(filter.toLowerCase()) ||
+        job.employer.toLowerCase().includes(filter.toLowerCase())
+      )
+    })
+    setFilteredJobsList(filter ? filteredList : jobsList)
+  }, [filter])
 
   return (
     <div className="bg-white">
@@ -105,7 +111,19 @@ export default function JobListingsSection() {
                   </div>
 
                   {/* Search Input */}
-                  <InputText {...keywordsInput} />
+                  <div>
+                    <div className="mt-2">
+                      <input
+                        type="text"
+                        name="filter"
+                        id="filter"
+                        className="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        placeholder="Search by Keywords"
+                        value={filter}
+                        onChange={(e) => setFilter(e.target.value)}
+                      />
+                    </div>
+                  </div>
 
                   {/* Category Input */}
                   <InputDropdown {...categoryDropdown} />
@@ -261,8 +279,19 @@ export default function JobListingsSection() {
               <form className="hidden rounded-md bg-primary-100 p-4 lg:flex lg:flex-col lg:gap-4">
                 <h3 className="sr-only">Categories</h3>
 
-                {/* Search Input */}
-                <InputText {...keywordsInput} />
+                <div>
+                  <div className="mt-2">
+                    <input
+                      type="text"
+                      name="filter"
+                      id="filter"
+                      className="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      placeholder="Search by Keywords"
+                      value={filter}
+                      onChange={(e) => setFilter(e.target.value)}
+                    />
+                  </div>
+                </div>
 
                 {/* Category Input */}
                 <InputDropdown {...categoryDropdown} />
