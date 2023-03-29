@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment, useState, useEffect, useContext } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import {
@@ -13,6 +13,7 @@ import FilterInput from '../FilterInput'
 import { getDatabase, ref, onValue } from 'firebase/database'
 import app from '../../database/firebase'
 import JobsGridSection from './JobsGridSection'
+import AppContext from '../context/AppContext'
 
 const sortOptions = [
   { name: 'Latest', href: '#', current: true },
@@ -82,7 +83,7 @@ function classNames(...classes) {
 
 export default function JobListingsSection() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
-  const [jobsList, setJobsList] = useState([])
+  const { setJobsList } = useContext(AppContext)
 
   useEffect(() => {
     const db = getDatabase(app)
@@ -93,7 +94,6 @@ export default function JobListingsSection() {
       for (const key in data) {
         arr.push({ key, ...data[key] })
       }
-      console.log('jobslist', arr)
       setJobsList(arr)
     })
   }, [])
@@ -254,8 +254,8 @@ export default function JobListingsSection() {
                       {sortOptions.map((option) => (
                         <Menu.Item key={option.name}>
                           {({ active }) => (
-                            <a
-                              href={option.href}
+                            <Link
+                              to={option.href}
                               className={classNames(
                                 option.current
                                   ? 'font-medium text-gray-900'
@@ -265,7 +265,7 @@ export default function JobListingsSection() {
                               )}
                             >
                               {option.name}
-                            </a>
+                            </Link>
                           )}
                         </Menu.Item>
                       ))}
@@ -373,7 +373,7 @@ export default function JobListingsSection() {
 
               {/* Product grid */}
               <div className="lg:col-span-3">
-                <JobsGridSection jobsList={jobsList} />
+                <JobsGridSection />
               </div>
             </div>
           </section>

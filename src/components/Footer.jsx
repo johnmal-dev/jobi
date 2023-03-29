@@ -62,12 +62,12 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.products.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
+                      <Link
+                        to={item.href}
                         className="text-sm leading-6 text-black hover:text-primary-500"
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -81,12 +81,12 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.links.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
+                      <Link
+                        to={item.href}
                         className="text-sm leading-6 text-black hover:text-primary-500"
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -98,12 +98,12 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
+                      <Link
+                        to={item.href}
                         className="text-sm leading-6 text-black hover:text-primary-500"
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -140,14 +140,14 @@ export default function Footer() {
           <div className="text-center">Copyright @2023 jobi inc.</div>
           <div className="flex items-center justify-center gap-4 lg:justify-end">
             {navigation.social.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className="text-black hover:text-primary-500"
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true" />
-              </a>
+              </Link>
             ))}
           </div>
         </div>

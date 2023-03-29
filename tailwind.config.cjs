@@ -45,7 +45,7 @@ module.exports = {
       },
       fontFamily: {
         heading: ['EB Garamond', 'serif'],
-        body: ['Gordita Regular', 'sans-serif'],
+        sans: ['Gordita', ...defaultTheme.fontFamily.sans],
       },
       content: {
         'category-icon': 'url("./assets/category-icon.svg")',

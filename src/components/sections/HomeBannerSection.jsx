@@ -9,11 +9,14 @@ const HomeBannerSection = () => {
           <span className="block text-primary-300">Top 3% of Experts</span>
           <span className="block text-primary-400">on jobi.</span>
         </h1>
-        <p className="mt-12 font-body text-xl text-white">
+        <p className="mt-12 text-xl text-white">
           We deliver blazing fast & striking work solutions
         </p>
         <form
-          onSubmit={() => console.log('submit')}
+          onSubmit={(e) => {
+            e.preventDefault()
+            console.log('submit')
+          }}
           className="relative z-20 mt-6 flex w-full flex-col md:flex-row lg:w-3/4"
         >
           <div className="flex-1 rounded-t-md bg-white px-6 py-3 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-primary-300 md:rounded-l-md md:rounded-tr-none">

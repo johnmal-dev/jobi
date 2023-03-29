@@ -37,33 +37,27 @@ export default function Header() {
                     </button>
                     <Link
                       to="/"
-                      className="rounded-full px-3 py-2 font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
+                      className="rounded-full px-3 py-2 font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                     >
                       Home
                     </Link>
                     <Link
                       to="/jobs"
-                      className="rounded-full px-3 py-2 font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
+                      className="rounded-full px-3 py-2 font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                     >
                       Jobs
                     </Link>
                     <Link
                       to="/jobs/new"
-                      className="rounded-full px-3 py-2 font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
+                      className="rounded-full px-3 py-2 font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                     >
                       Post New Job
                     </Link>
                     <Link
-                      to="#"
+                      to="/"
                       className="rounded-full px-3 py-2 font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                     >
                       Contact
-                    </Link>
-                    <Link
-                      to="#"
-                      className="rounded-full px-3 py-2 font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
-                    >
-                      Pages
                     </Link>
                   </div>
                 </div>
@@ -147,18 +141,20 @@ export default function Header() {
                     <>
                       <Link
                         to="/register"
-                        className="link-white link mx-2 block border-r border-secondary-100 border-opacity-25 pr-4 text-white underline"
+                        className="rounded-full px-3 py-2 font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                       >
                         Register
                       </Link>
                       <Link
                         to="/login"
-                        className="link link-white mx-2 block px-2 text-white underline"
-                        // onClick={() => setIsLoggedIn(true)}
+                        className="rounded-full px-3 py-2 font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                       >
                         Login
                       </Link>
-                      <Link to="/jobs/new" className="btn btn-primary block">
+                      <Link
+                        to="/jobs/new"
+                        className="btn btn-primary ml-4 block"
+                      >
                         Hire Top Talents
                       </Link>
                     </>
@@ -173,23 +169,16 @@ export default function Header() {
               <Disclosure.Button
                 as={Link}
                 to="/"
-                className="block rounded-full px-3 py-2 text-base font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
+                className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
               >
                 Home
               </Disclosure.Button>
               <Disclosure.Button
                 as={Link}
                 to="/jobs"
-                className="block rounded-full px-3 py-2 text-base font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
+                className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
               >
                 Jobs
-              </Disclosure.Button>
-              <Disclosure.Button
-                as={Link}
-                to="/jobs/new"
-                className="block rounded-full px-3 py-2 text-base font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
-              >
-                Post New Job
               </Disclosure.Button>
               <Disclosure.Button
                 as={Link}
@@ -200,25 +189,24 @@ export default function Header() {
               </Disclosure.Button>
               <Disclosure.Button
                 as={Link}
-                to="/"
+                to="/jobs/new"
                 className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
               >
-                Pages
+                Post New Job
               </Disclosure.Button>
               {!currentUser && (
                 <>
                   <Disclosure.Button
                     as={Link}
                     to="/register"
-                    className="block rounded-full px-3 py-2 text-base font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
+                    className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                   >
                     Register
                   </Disclosure.Button>
                   <Disclosure.Button
                     as={Link}
                     to="/login"
-                    className="block rounded-full px-3 py-2 text-base font-medium text-white underline hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
-                    // onClick={() => setIsLoggedIn(true)}
+                    className="block rounded-full px-3 py-2 text-base font-medium text-white hover:bg-secondary-100 hover:bg-opacity-10 hover:text-primary-300"
                   >
                     Login
                   </Disclosure.Button>

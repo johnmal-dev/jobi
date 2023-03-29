@@ -5,7 +5,7 @@ import { salaryDisplay } from '../utils/helpers'
 
 const JobCard = ({ job }) => {
   return (
-    <li className="col-span-1 rounded-lg border border-secondary-500 bg-white p-6 shadow">
+    <div className="col-span-1 flex flex-col items-start justify-between rounded-lg border border-secondary-500 bg-white p-6 shadow">
       <div className="flex w-full items-center justify-between">
         <div className="h-6 w-6 bg-secondary-500">
           <img src="#" alt="" />
@@ -36,7 +36,7 @@ const JobCard = ({ job }) => {
           Apply
         </Link>
       </div>
-    </li>
+    </div>
   )
 }
 

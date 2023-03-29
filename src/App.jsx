@@ -24,7 +24,7 @@ function App() {
     })
   }, [onAuthStateChanged])
   return (
-    <div className="font-body text-secondary-900">
+    <div className="text-secondary-900">
       <Header />
       <Main />
       <Footer />

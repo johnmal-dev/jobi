@@ -8,7 +8,7 @@ const JobsBannerSection = () => {
         <h1 className="z-20 font-heading text-5xl text-white sm:text-7xl md:text-8xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
           Job Listings
         </h1>
-        <p className="mt-12 font-body text-xl text-white">
+        <p className="mt-12 text-xl text-white">
           We deliver blazing fast & striking work solutions
         </p>
         <JobsForm />
