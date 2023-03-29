@@ -19,6 +19,7 @@ import {
   categoryDropdown,
   fluencyDropdown,
 } from '../../data/categories'
+import { Link } from 'react-router-dom'
 
 const sortOptions = [
   { name: 'Latest', href: '#', current: true },
@@ -37,8 +38,19 @@ function classNames(...classes) {
 
 export default function JobListingsSection() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
-  const { setJobsList, filter, setFilter, jobsList, setFilteredJobsList } =
-    useContext(AppContext)
+  const {
+    setJobsList,
+    filter,
+    setFilter,
+    jobsList,
+    setFilteredJobsList,
+    filteredJobsList,
+  } = useContext(AppContext)
+
+  const filterClasses = classNames(
+    'block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-500 sm:text-sm sm:leading-6',
+    filteredJobsList.length === 0 ? 'text-red-500 focus:ring-red-500' : ''
+  )
 
   useEffect(() => {
     const db = getDatabase(app)
@@ -64,7 +76,7 @@ export default function JobListingsSection() {
   }, [filter])
 
   return (
-    <div className="bg-white">
+    <div className="bg-white" id="list">
       <div>
         {/* Mobile filter dialog */}
         <Transition.Root show={mobileFiltersOpen} as={Fragment}>
@@ -285,7 +297,7 @@ export default function JobListingsSection() {
                       type="text"
                       name="filter"
                       id="filter"
-                      className="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className={filterClasses}
                       placeholder="Search by Keywords"
                       value={filter}
                       onChange={(e) => setFilter(e.target.value)}
