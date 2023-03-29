@@ -1,7 +1,7 @@
 import React from 'react'
 import CategoryCard from '../CategoryCard'
 import { Link } from 'react-router-dom'
-import jobData from '../../data/categories'
+import { jobData } from '../../data/categories'
 
 const JobCategoriesSection = () => {
   return (

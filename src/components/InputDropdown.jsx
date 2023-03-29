@@ -1,6 +1,6 @@
-const FilterDropdown = ({ id, name, options }) => {
+const InputDropdown = ({ id, name, options, className = '' }) => {
   return (
-    <div>
+    <div className={className}>
       <label
         htmlFor={id}
         className="block text-sm font-medium leading-6 text-gray-900"
@@ -25,4 +25,4 @@ const FilterDropdown = ({ id, name, options }) => {
   )
 }
 
-export default FilterDropdown
+export default InputDropdown

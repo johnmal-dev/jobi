@@ -1,16 +1,14 @@
 import React from 'react'
 
-const FilterInput = ({ label, placeholder, id }) => {
+const InputText = ({ label, placeholder, id }) => {
   return (
     <div>
-      {label && (
-        <label
-          htmlFor={id}
-          className="block text-sm font-medium leading-6 text-gray-900"
-        >
-          {label}
-        </label>
-      )}
+      <label
+        htmlFor={id}
+        className="block h-5 text-sm font-medium leading-6 text-gray-900"
+      >
+        {label ? label : ''}
+      </label>
       <div className="mt-2">
         <input
           type={id}
@@ -24,4 +22,4 @@ const FilterInput = ({ label, placeholder, id }) => {
   )
 }
 
-export default FilterInput
+export default InputText

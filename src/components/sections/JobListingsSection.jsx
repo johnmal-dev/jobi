@@ -8,68 +8,27 @@ import {
   PlusIcon,
   Squares2X2Icon,
 } from '@heroicons/react/20/solid'
-import FilterDropdown from '../FilterDropdown'
-import FilterInput from '../FilterInput'
+import InputDropdown from '../InputDropdown'
+import InputText from '../InputText'
 import { getDatabase, ref, onValue } from 'firebase/database'
 import app from '../../database/firebase'
 import JobsGridSection from './JobsGridSection'
 import AppContext from '../context/AppContext'
+import {
+  filters,
+  categoryDropdown,
+  fluencyDropdown,
+} from '../../data/categories'
 
 const sortOptions = [
   { name: 'Latest', href: '#', current: true },
   { name: 'Relevance', href: '#', current: false },
 ]
 
-const filters = [
-  {
-    id: 'job-type',
-    name: 'Job Type',
-    options: [
-      { value: 'full-time', label: 'Full-time', checked: false },
-      { value: 'hourly-contract', label: 'Hourly-Contract', checked: false },
-      { value: 'part-time', label: 'Part-time', checked: false },
-      { value: 'fixed-price', label: 'Fixed-Price', checked: false },
-    ],
-  },
-  {
-    id: 'experience-level',
-    name: 'Experience Level',
-    options: [
-      { value: 'beginner', label: 'Beginner (1-3yrs)', checked: false },
-      {
-        value: 'intermediate',
-        label: 'Intermediate (1-5 yrs)',
-        checked: false,
-      },
-      { value: 'expert', label: 'Expert (1-10yrs)', checked: false },
-    ],
-  },
-]
-
-const categoryDropdown = {
-  id: 'categories',
-  name: 'Categories',
-  options: [
-    { value: 'web-development', label: 'Web Development' },
-    { value: 'art', label: 'Art' },
-    { value: 'business', label: 'Business' },
-    { value: 'video-editing', label: 'Video Editing' },
-  ],
-}
-
-const fluencyDropdown = {
-  id: 'fluency',
-  name: 'English Fluency',
-  options: [
-    { value: 'fluent', label: 'Fluent' },
-    { value: 'not-fluent', label: 'Not Fluent' },
-  ],
-}
-
 const keywordsInput = {
   id: 'keywords',
   placeholder: 'Search by Keywords',
-  label: null,
+  label: 'Keywords',
 }
 const locationInput = {
   id: 'location',
@@ -146,10 +105,10 @@ export default function JobListingsSection() {
                   </div>
 
                   {/* Search Input */}
-                  <FilterInput {...keywordsInput} />
+                  <InputText {...keywordsInput} />
 
                   {/* Category Input */}
-                  <FilterDropdown {...categoryDropdown} />
+                  <InputDropdown {...categoryDropdown} />
 
                   {/* Filters */}
                   <form className="mt-4 border-t border-gray-200">
@@ -212,9 +171,9 @@ export default function JobListingsSection() {
                       </Disclosure>
                     ))}
                     {/* Location Input */}
-                    <FilterInput {...locationInput} />
+                    <InputText {...locationInput} />
                     {/* Fluency Input */}
-                    <FilterDropdown {...fluencyDropdown} />
+                    <InputDropdown {...fluencyDropdown} />
                   </form>
                 </Dialog.Panel>
               </Transition.Child>
@@ -303,10 +262,10 @@ export default function JobListingsSection() {
                 <h3 className="sr-only">Categories</h3>
 
                 {/* Search Input */}
-                <FilterInput {...keywordsInput} />
+                <InputText {...keywordsInput} />
 
                 {/* Category Input */}
-                <FilterDropdown {...categoryDropdown} />
+                <InputDropdown {...categoryDropdown} />
 
                 {filters.map((section) => (
                   <Disclosure
@@ -366,9 +325,9 @@ export default function JobListingsSection() {
                   </Disclosure>
                 ))}
                 {/* Location Input */}
-                <FilterInput {...locationInput} />
+                <InputText {...locationInput} />
                 {/* Fluency Input */}
-                <FilterDropdown {...fluencyDropdown} />
+                <InputDropdown {...fluencyDropdown} />
               </form>
 
               {/* Product grid */}
