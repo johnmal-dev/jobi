@@ -3,15 +3,23 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth'
-import { getDatabase, ref, update, push } from 'firebase/database'
+import { getDatabase, ref, update, push, set } from 'firebase/database'
 import app from '../database/firebase'
 
-const registerService = (email, password) => {
+const registerService = (email, password, name, accountType) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed up user
+      // user successfully registered
       const user = userCredential.user
-      console.log('register successful', user)
+      console.log('registration successful', user)
+
+      // save name and account type to db
+      const db = getDatabase(app)
+      const userRef = ref(db, `users/${user.uid}`)
+      set(userRef, {
+        name: name,
+        accountType: accountType,
+      })
     })
     .catch((err) => {
       // Handle errors
