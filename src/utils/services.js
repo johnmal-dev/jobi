@@ -2,6 +2,7 @@ import { auth } from '../database/firebase'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from 'firebase/auth'
 import { getDatabase, ref, update, push, set } from 'firebase/database'
 import app from '../database/firebase'
@@ -13,11 +14,17 @@ const registerService = (email, password, name, accountType) => {
       const user = userCredential.user
       console.log('registration successful', user)
 
-      // save name and account type to db
+      // update display name in firebase authentication
+      updateProfile(user, {
+        displayName: name,
+      })
+
+      // save name and account type to realtime db
       const db = getDatabase(app)
       const userRef = ref(db, `users/${user.uid}`)
       set(userRef, {
         name: name,
+        email: email,
         accountType: accountType,
       })
     })
