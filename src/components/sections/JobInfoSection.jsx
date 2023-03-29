@@ -28,7 +28,7 @@ const JobInfoSection = () => {
     <>
       {shouldRedirect && <Navigate replace to="/error" />}
       {jobData && (
-        <div className="container my-28 grid grid-cols-10 items-start gap-10">
+        <div className="container my-28 flex flex-col items-start gap-10 lg:grid lg:grid-cols-10">
           {/* Main */}
           <div className="col-span-7 space-y-4">
             <div className="font-bold">
@@ -38,7 +38,7 @@ const JobInfoSection = () => {
               {jobData.employer}
             </div>
             <h2 className="text-4xl font-medium">{jobData.title}</h2>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Link
                 to={jobData.facebook}
                 className="flex items-center  justify-center gap-2 rounded bg-white py-1  px-2 text-sm font-medium text-primary-700 shadow-sm ring-1 ring-inset ring-primary-700 hover:bg-gray-50"
@@ -125,47 +125,51 @@ const JobInfoSection = () => {
             </div>
           </div>
           {/* Sidebar */}
-          <div className="col-span-3 flex flex-col items-center justify-start gap-4 rounded-lg bg-primary-100 py-10 px-8 shadow">
-            <div className="h-20 w-20 rounded-full bg-secondary-500">
-              <img src="#" alt="" />
-            </div>
-            <div>{jobData.employer}</div>
-            <Link
-              to={jobData.twitter}
-              className="rounded-full bg-primary-500 py-3  px-8 text-sm font-medium leading-3 text-white shadow-sm ring-1 ring-inset ring-primary-500 hover:bg-gray-50 hover:text-primary-500"
-            >
-              Visit Website
-            </Link>
-            <div className="grid w-full grid-cols-2 gap-4 text-sm">
-              <div>
-                <div>Salary</div>
-                <div>
-                  {salaryDisplay(jobData.salary.min)}-
-                  {salaryDisplay(jobData.salary.max)}
-                  /year
+          <div className="flex flex-col items-center justify-start gap-4 rounded-lg bg-primary-100 py-10 px-8 shadow lg:col-span-3">
+            <div className="flex w-full flex-col items-center justify-center gap-6 sm:flex-row lg:flex-col lg:gap-4">
+              <div className="mx-6 flex flex-col items-center justify-center text-center lg:mx-0">
+                <div className="mx-auto h-20 w-20 rounded-full bg-secondary-500">
+                  <img src="#" alt="" />
                 </div>
+                <div>{jobData.employer}</div>
+                <Link
+                  to={jobData.twitter}
+                  className="rounded-full bg-primary-500 py-3  px-8 text-sm font-medium leading-3 text-white shadow-sm ring-1 ring-inset ring-primary-500 hover:bg-gray-50 hover:text-primary-500"
+                >
+                  Visit Website
+                </Link>
               </div>
-              <div>
-                <div>Expertise</div>
-                <div>{jobData.expertiseLevel}</div>
-              </div>
-              <div>
-                <div>Location</div>
+              <div className="grid w-full grid-cols-2 gap-4 text-sm">
                 <div>
-                  {jobData.location.city}, {jobData.location.country}
+                  <div>Salary</div>
+                  <div>
+                    {salaryDisplay(jobData.salary.min)}-
+                    {salaryDisplay(jobData.salary.max)}
+                    /year
+                  </div>
                 </div>
-              </div>
-              <div>
-                <div>Job Type</div>
-                <div>{jobData.contractType}</div>
-              </div>
-              <div>
-                <div>Date</div>
-                <div>{jobData.date}</div>
-              </div>
-              <div>
-                <div>Experience</div>
-                <div>{jobData.experienceYears} Years</div>
+                <div>
+                  <div>Expertise</div>
+                  <div>{jobData.expertiseLevel}</div>
+                </div>
+                <div>
+                  <div>Location</div>
+                  <div>
+                    {jobData.location.city}, {jobData.location.country}
+                  </div>
+                </div>
+                <div>
+                  <div>Job Type</div>
+                  <div>{jobData.contractType}</div>
+                </div>
+                <div>
+                  <div>Date</div>
+                  <div>{jobData.date}</div>
+                </div>
+                <div>
+                  <div>Experience</div>
+                  <div>{jobData.experienceYears} Years</div>
+                </div>
               </div>
             </div>
             {/* Keywords */}

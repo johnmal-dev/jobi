@@ -8,7 +8,7 @@ const JobDetailsBannerSection = () => {
         <h1 className="z-20 font-heading text-5xl text-white sm:text-7xl md:text-8xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
           Job Details
         </h1>
-        <p className="mt-12 text-xl text-white">
+        <p className="mt-12 text-center text-xl text-white">
           Here will be your company job details & requirements
         </p>
       </div>
