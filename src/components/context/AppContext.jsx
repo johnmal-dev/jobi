@@ -8,6 +8,7 @@ export const AppProvider = ({ children }) => {
   const [jobsList, setJobsList] = useState([])
   const [filter, setFilter] = useState('')
   const [filteredJobsList, setFilteredJobsList] = useState([])
+  const [sortMethod, setSortMethod] = useState('Recent')
 
   return (
     <AppContext.Provider
@@ -19,6 +20,8 @@ export const AppProvider = ({ children }) => {
         setFilter,
         filteredJobsList,
         setFilteredJobsList,
+        sortMethod,
+        setSortMethod,
       }}
     >
       {children}

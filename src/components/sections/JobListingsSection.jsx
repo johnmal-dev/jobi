@@ -19,11 +19,10 @@ import {
   categoryDropdown,
   fluencyDropdown,
 } from '../../data/categories'
-import { Link } from 'react-router-dom'
 
 const sortOptions = [
-  { name: 'Latest', href: '#', current: true },
-  { name: 'Relevance', href: '#', current: false },
+  { name: 'Recent', href: '#', current: false },
+  { name: 'Oldest', href: '#', current: false },
 ]
 
 const locationInput = {
@@ -45,12 +44,20 @@ export default function JobListingsSection() {
     jobsList,
     setFilteredJobsList,
     filteredJobsList,
+    sortMethod,
+    setSortMethod,
   } = useContext(AppContext)
 
   const filterClasses = classNames(
     'block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-500 sm:text-sm sm:leading-6',
     filteredJobsList.length === 0 ? 'text-red-500 focus:ring-red-500' : ''
   )
+
+  const handleSortClick = (e) => {
+    e.preventDefault()
+    const sortChoice = e.target.value
+    setSortMethod(sortChoice)
+  }
 
   useEffect(() => {
     const db = getDatabase(app)
@@ -66,6 +73,23 @@ export default function JobListingsSection() {
   }, [])
 
   useEffect(() => {
+    if (sortMethod === 'Oldest') {
+      console.log('oldest if')
+      const sortOldest = filteredJobsList
+        .slice()
+        .sort((a, b) => new Date(a.date) - new Date(b.date))
+      setFilteredJobsList(sortOldest)
+    }
+    if (sortMethod === 'Recent') {
+      console.log('recent if')
+      const sortRecent = filteredJobsList
+        .slice()
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+      setFilteredJobsList(sortRecent)
+    }
+  }, [sortMethod])
+
+  useEffect(() => {
     const filteredList = jobsList.filter((job) => {
       return (
         job.title.toLowerCase().includes(filter.toLowerCase()) ||
@@ -73,7 +97,7 @@ export default function JobListingsSection() {
       )
     })
     setFilteredJobsList(filter ? filteredList : jobsList)
-  }, [filter])
+  }, [filter, jobsList])
 
   return (
     <div className="bg-white" id="list">
@@ -242,19 +266,20 @@ export default function JobListingsSection() {
                     <div className="py-1">
                       {sortOptions.map((option) => (
                         <Menu.Item key={option.name}>
-                          {({ active }) => (
-                            <Link
-                              to={option.href}
+                          {() => (
+                            <button
+                              onClick={handleSortClick}
+                              value={option.name}
                               className={classNames(
                                 option.current
                                   ? 'font-medium text-gray-900'
                                   : 'text-gray-500',
-                                active ? 'bg-gray-100' : '',
+                                sortMethod === option.name ? 'font-bold' : '',
                                 'block px-4 py-2 text-sm'
                               )}
                             >
                               {option.name}
-                            </Link>
+                            </button>
                           )}
                         </Menu.Item>
                       ))}

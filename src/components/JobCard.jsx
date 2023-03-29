@@ -37,6 +37,7 @@ const JobCard = ({ job }) => {
           Apply
         </Link>
       </div>
+      <div className="text-sm italic">{job.date}</div>
     </div>
   )
 }
