@@ -12,17 +12,17 @@ import {
 const steps = [
   {
     text: 'Job Details',
-    icon: 'content-paper-icon',
+    icon: 'before:content-paper-icon',
     active: true,
   },
   {
     text: 'Payment Info',
-    icon: 'content-credit-card-icon',
+    icon: 'before:content-credit-card-icon',
     active: false,
   },
   {
     text: 'Confirmation',
-    icon: 'content-tick-square-icon',
+    icon: 'before:content-tick-square-icon',
     active: false,
   },
 ]
@@ -127,9 +127,9 @@ const PostNewJobFormSection = () => {
               >
                 <div
                   className={classNames(
-                    'before:' + step.icon,
+                    step.icon,
                     step.active ? 'bg-primary-300' : 'bg-white',
-                    'justify-stretch relative h-16 w-16 rounded-full before:absolute before:top-1/2 before:left-1/2 before:flex before:-translate-x-1/2 before:-translate-y-1/2 before:items-center before:justify-center xs:h-24 xs:w-24'
+                    'relative h-16 w-16 justify-stretch rounded-full before:absolute before:left-1/2 before:top-1/2 before:flex before:-translate-x-1/2 before:-translate-y-1/2 before:items-center before:justify-center xs:h-24 xs:w-24'
                   )}
                 ></div>
                 <div className="text-center text-xs xs:text-base">
@@ -140,7 +140,7 @@ const PostNewJobFormSection = () => {
           })}
         </div>
         {/* Form */}
-        <div className="my-12 mx-auto max-w-6xl space-y-6 bg-white p-12 shadow sm:rounded-md">
+        <div className="mx-auto my-12 max-w-6xl space-y-6 bg-white p-12 shadow sm:rounded-md">
           <form onSubmit={handleSubmit} className="space-y-12">
             {/* Job Details Section*/}
             <div className="space-y-4">
@@ -178,7 +178,7 @@ const PostNewJobFormSection = () => {
                   return (
                     <button
                       key={index}
-                      className="block rounded-full bg-primary-100 py-1 px-2 text-center text-xs font-medium text-black text-opacity-50 ring-0 hover:bg-gray-50 hover:ring-2 hover:ring-inset hover:ring-primary-500"
+                      className="block rounded-full bg-primary-100 px-2 py-1 text-center text-xs font-medium text-black text-opacity-50 ring-0 hover:bg-gray-50 hover:ring-2 hover:ring-inset hover:ring-primary-500"
                     >
                       {word}
                     </button>
