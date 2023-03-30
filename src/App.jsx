@@ -17,7 +17,6 @@ function App() {
       if (user) {
         console.log('logged in')
         setCurrentUser(user)
-        navigate('/jobs')
       } else {
         setCurrentUser(null)
         console.log('logged out')

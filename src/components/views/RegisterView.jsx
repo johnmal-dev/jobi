@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Switch } from '@headlessui/react'
 import { registerService } from '../../utils/services'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaFacebook } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
 
@@ -11,6 +11,7 @@ function classNames(...classes) {
 
 export default function RegisterView() {
   const [isEmployer, setIsEmployer] = useState(false)
+  let navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -23,6 +24,7 @@ export default function RegisterView() {
     console.log(formData, email, password)
     try {
       await registerService(email, password, name, accountType)
+      navigate('/')
     } catch (err) {
       console.log('error', err)
     }
@@ -32,7 +34,7 @@ export default function RegisterView() {
     <div className="bg-secondary-100">
       <div className="container flex min-h-full flex-col justify-center py-24 sm:px-6 lg:px-8">
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-lg md:max-w-xl">
-          <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+          <div className="bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
             <h2 className="p-1 text-center font-heading text-6xl text-primary-700">
               Create Account
             </h2>
@@ -171,7 +173,7 @@ export default function RegisterView() {
               <div>
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-primary-500 py-3 px-3 text-sm uppercase text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+                  className="flex w-full justify-center rounded-md bg-primary-500 px-3 py-3 text-sm uppercase text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                 >
                   Register
                 </button>
@@ -192,7 +194,7 @@ export default function RegisterView() {
                 <div>
                   <Link
                     to="#"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-white py-2 px-4 text-base text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-white px-4 py-2 text-base text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0"
                   >
                     <span className="sr-only">Signup with Google</span>
                     <FcGoogle /> <span>Signup with Google</span>
@@ -202,7 +204,7 @@ export default function RegisterView() {
                 <div>
                   <Link
                     to="#"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-white py-2 px-4 text-base text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-white px-4 py-2 text-base text-gray-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0"
                   >
                     <span className="sr-only">Signup with Facebook</span>
                     <FaFacebook color="#1877F2" />{' '}

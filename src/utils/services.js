@@ -1,11 +1,10 @@
-import { auth } from '../database/firebase'
+import app, { auth } from '../database/firebase'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
 } from 'firebase/auth'
 import { getDatabase, ref, update, push, set } from 'firebase/database'
-import app from '../database/firebase'
 
 const registerService = (email, password, name, accountType) => {
   createUserWithEmailAndPassword(auth, email, password)
@@ -66,6 +65,19 @@ const addJobService = (job) => {
     .catch((err) => {
       console.log(err)
     })
+}
+
+const addBookmark = (job, user) => {
+  if (user) {
+    // save job to key to users/${userId}/bookmarks
+    const db = getDatabase(app)
+    const userRef = ref(db, `users/${user.uid}`)
+    set(userRef, {
+      name: name,
+      email: email,
+      accountType: accountType,
+    })
+  }
 }
 
 export { registerService, addJobService, loginService, logoutService }
