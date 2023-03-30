@@ -7,6 +7,7 @@ import {
   MinusIcon,
   PlusIcon,
   Squares2X2Icon,
+  Bars3Icon,
 } from '@heroicons/react/20/solid'
 import InputDropdown from '../InputDropdown'
 import InputText from '../InputText'
@@ -33,8 +34,16 @@ function classNames(...classes) {
 
 export default function JobListingsSection() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
-  const { setJobsList, filter, setFilter, setSortOrder, sortOrder, jobsList } =
-    useContext(AppContext)
+  const {
+    setJobsList,
+    filter,
+    setFilter,
+    setSortOrder,
+    sortOrder,
+    jobsList,
+    jobsViewType,
+    setJobsViewType,
+  } = useContext(AppContext)
 
   const handleSortClick = (e) => {
     const sortChoice = e.target.value
@@ -266,9 +275,18 @@ export default function JobListingsSection() {
               <button
                 type="button"
                 className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7"
+                onClick={() => {
+                  setJobsViewType(jobsViewType === 'grid' ? 'list' : 'grid')
+                }}
               >
-                <span className="sr-only">View grid</span>
-                <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">
+                  {jobsViewType === 'grid' ? 'View List' : 'View Grid'}
+                </span>
+                {jobsViewType === 'grid' ? (
+                  <Bars3Icon className="h-5 w-5" aria-hidden="true" />
+                ) : (
+                  <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
+                )}
               </button>
               <button
                 type="button"
@@ -281,16 +299,14 @@ export default function JobListingsSection() {
             </div>
           </div>
 
-          <section aria-labelledby="products-heading" className="pb-24 pt-6">
-            <h2 id="products-heading" className="sr-only">
-              Products
+          <section aria-labelledby="filters-heading" className="pb-24 pt-6">
+            <h2 id="filters-heading" className="sr-only">
+              Filters
             </h2>
 
             <div className="grid grid-cols-1 items-start gap-x-8 gap-y-10 lg:grid-cols-4">
               {/* Filters */}
               <form className="hidden rounded-md bg-primary-100 p-4 lg:flex lg:flex-col lg:gap-4">
-                <h3 className="sr-only">Categories</h3>
-
                 <div>
                   <div className="mt-2">
                     <input

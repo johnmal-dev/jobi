@@ -7,6 +7,7 @@ const jobCategories = ['Web Design', 'Art', 'Business', 'Video Editing']
 export const AppProvider = ({ children }) => {
   const [jobsList, setJobsList] = useState([])
   const [sortOrder, setSortOrder] = useState('Recent')
+  const [jobsViewType, setJobsViewType] = useState('list')
   const [filter, setFilter] = useState({
     keywords: '',
     minSalary: '',
@@ -49,6 +50,8 @@ export const AppProvider = ({ children }) => {
         filteredJobs,
         sortOrder,
         setSortOrder,
+        jobsViewType,
+        setJobsViewType,
       }}
     >
       {children}
