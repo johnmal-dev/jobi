@@ -15,14 +15,14 @@ export default function JobsGridSection() {
       className={classNames(
         jobsViewType === 'grid'
           ? 'grid grid-cols-1 gap-6 sm:grid-cols-2'
-          : 'flex flex-col',
+          : 'flex flex-col space-y-6',
         ''
       )}
     >
       {filteredJobs.length > 0 ? (
         filteredJobs.map((job) => (
           <li key={job.key}>
-            <JobCard job={job} />
+            <JobCard job={job} jobsViewType={jobsViewType} />
           </li>
         ))
       ) : (
