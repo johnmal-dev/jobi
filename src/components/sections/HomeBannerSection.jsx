@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import AppContext from '../context/AppContext'
 
 const HomeBannerSection = () => {
-  const { setFilter } = useContext(AppContext)
+  const { setFilter, filter } = useContext(AppContext)
   const navigate = useNavigate()
 
   return (
     <div className="relative bg-primary-700 pt-0 lg:pt-6">
-      <div className="container relative flex flex-col pt-12 pb-16 lg:pt-24 lg:pb-40">
+      <div className="container relative flex flex-col pb-16 pt-12 lg:pb-40 lg:pt-24">
         <h1 className="z-20 font-heading text-5xl sm:text-7xl md:text-8xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
           <span className="block text-white">Find & Hire</span>
           <span className="block text-primary-300">Top 3% of Experts</span>
@@ -21,8 +21,8 @@ const HomeBannerSection = () => {
           onSubmit={(e) => {
             e.preventDefault()
             const formData = new FormData(e.target)
-            const filter = formData.get('keywordInput') ?? undefined
-            setFilter(filter)
+            const userInput = formData.get('keywordInput') ?? ''
+            setFilter({ ...filter, keywords: userInput })
             navigate('/jobs')
           }}
           className="relative z-20 mt-6 flex w-full flex-col md:flex-row lg:w-3/4"
@@ -72,10 +72,10 @@ const HomeBannerSection = () => {
         </div>
         <div className="hidden lg:block">
           <div className="absolute right-0 top-0 z-10 h-full w-1/2 -translate-x-5 translate-y-10 bg-secondary-500"></div>
-          <div className="absolute top-0 right-0 z-0 w-1/2 -translate-x-32 scale-75 before:absolute before:w-full before:content-banner-art-2 xl:-translate-x-16 xl:scale-100"></div>
+          <div className="absolute right-0 top-0 z-0 w-1/2 -translate-x-32 scale-75 before:absolute before:w-full before:content-banner-art-2 xl:-translate-x-16 xl:scale-100"></div>
         </div>
       </div>
-      <div className="absolute left-0 bottom-0 hidden content-banner-art lg:block"></div>
+      <div className="absolute bottom-0 left-0 hidden content-banner-art lg:block"></div>
     </div>
   )
 }
