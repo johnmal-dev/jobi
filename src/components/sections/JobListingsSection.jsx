@@ -14,11 +14,7 @@ import { getDatabase, ref, onValue } from 'firebase/database'
 import app from '../../database/firebase'
 import JobsGridSection from './JobsGridSection'
 import AppContext from '../context/AppContext'
-import {
-  filters,
-  categoryDropdown,
-  fluencyDropdown,
-} from '../../data/categories'
+import { filters, categoryDropdown } from '../../data/categories'
 
 const sortOptions = [
   { name: 'Recent', href: '#', current: false },
@@ -37,26 +33,26 @@ function classNames(...classes) {
 
 export default function JobListingsSection() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
-  const {
-    setJobsList,
-    filter,
-    setFilter,
-    jobsList,
-    setFilteredJobsList,
-    filteredJobsList,
-    sortMethod,
-    setSortMethod,
-  } = useContext(AppContext)
-
-  const filterClasses = classNames(
-    'block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-500 sm:text-sm sm:leading-6',
-    filteredJobsList.length === 0 ? 'text-red-500 focus:ring-red-500' : ''
-  )
+  const { setJobsList, filter, setFilter, setSortOrder, sortOrder, jobsList } =
+    useContext(AppContext)
 
   const handleSortClick = (e) => {
-    e.preventDefault()
     const sortChoice = e.target.value
-    setSortMethod(sortChoice)
+    setSortOrder(sortChoice)
+  }
+
+  const handleFilterChange = (e) => {
+    setFilter({ ...filter, [e.target.name]: e.target.value })
+  }
+
+  const sortJobs = (jobsArray, order) => {
+    return [...jobsArray].sort((a, b) => {
+      if (order === 'Recent') {
+        return new Date(b.date) - new Date(a.date)
+      } else {
+        return new Date(a.date) - new Date(b.date)
+      }
+    })
   }
 
   useEffect(() => {
@@ -68,36 +64,14 @@ export default function JobListingsSection() {
       for (const key in data) {
         arr.push({ key, ...data[key] })
       }
-      setJobsList(arr)
+      setJobsList(sortJobs(arr, sortOrder))
     })
   }, [])
 
   useEffect(() => {
-    if (sortMethod === 'Oldest') {
-      console.log('oldest if')
-      const sortOldest = filteredJobsList
-        .slice()
-        .sort((a, b) => new Date(a.date) - new Date(b.date))
-      setFilteredJobsList(sortOldest)
-    }
-    if (sortMethod === 'Recent') {
-      console.log('recent if')
-      const sortRecent = filteredJobsList
-        .slice()
-        .sort((a, b) => new Date(b.date) - new Date(a.date))
-      setFilteredJobsList(sortRecent)
-    }
-  }, [sortMethod])
-
-  useEffect(() => {
-    const filteredList = jobsList.filter((job) => {
-      return (
-        job.title.toLowerCase().includes(filter.toLowerCase()) ||
-        job.employer.toLowerCase().includes(filter.toLowerCase())
-      )
-    })
-    setFilteredJobsList(filter ? filteredList : jobsList)
-  }, [filter, jobsList])
+    const sortedJobs = sortJobs(jobsList, sortOrder)
+    setJobsList(sortedJobs)
+  }, [sortOrder])
 
   return (
     <div className="bg-white" id="list">
@@ -131,7 +105,7 @@ export default function JobListingsSection() {
                 leaveFrom="translate-x-0"
                 leaveTo="translate-x-full"
               >
-                <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col gap-4 overflow-y-auto bg-primary-100 py-4 px-4 pb-12 shadow-xl">
+                <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col gap-4 overflow-y-auto bg-primary-100 px-4 py-4 pb-12 shadow-xl">
                   <div className="flex items-center justify-between px-4">
                     <h2 className="text-lg font-medium text-gray-900">
                       Filters
@@ -151,12 +125,12 @@ export default function JobListingsSection() {
                     <div className="mt-2">
                       <input
                         type="text"
-                        name="filter"
-                        id="filter"
-                        className="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        name="keywords"
+                        id="keywords"
+                        className="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         placeholder="Search by Keywords"
-                        value={filter}
-                        onChange={(e) => setFilter(e.target.value)}
+                        value={filter.keywords}
+                        onChange={handleFilterChange}
                       />
                     </div>
                   </div>
@@ -225,9 +199,10 @@ export default function JobListingsSection() {
                       </Disclosure>
                     ))}
                     {/* Location Input */}
-                    <InputText {...locationInput} />
-                    {/* Fluency Input */}
-                    <InputDropdown {...fluencyDropdown} />
+                    <InputText
+                      {...locationInput}
+                      onChange={handleFilterChange}
+                    />
                   </form>
                 </Dialog.Panel>
               </Transition.Child>
@@ -236,7 +211,7 @@ export default function JobListingsSection() {
         </Transition.Root>
 
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-baseline justify-between border-b border-gray-200 pt-24 pb-6">
+          <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900">
               Filter By
             </h1>
@@ -274,7 +249,7 @@ export default function JobListingsSection() {
                                 option.current
                                   ? 'font-medium text-gray-900'
                                   : 'text-gray-500',
-                                sortMethod === option.name ? 'font-bold' : '',
+                                sortOrder === option.name ? 'font-bold' : '',
                                 'block px-4 py-2 text-sm'
                               )}
                             >
@@ -306,7 +281,7 @@ export default function JobListingsSection() {
             </div>
           </div>
 
-          <section aria-labelledby="products-heading" className="pt-6 pb-24">
+          <section aria-labelledby="products-heading" className="pb-24 pt-6">
             <h2 id="products-heading" className="sr-only">
               Products
             </h2>
@@ -320,12 +295,17 @@ export default function JobListingsSection() {
                   <div className="mt-2">
                     <input
                       type="text"
-                      name="filter"
-                      id="filter"
-                      className={filterClasses}
+                      name="keywords"
+                      id="keywords"
+                      className="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-500 sm:text-sm sm:leading-6"
                       placeholder="Search by Keywords"
-                      value={filter}
-                      onChange={(e) => setFilter(e.target.value)}
+                      value={filter.keywords}
+                      onChange={(e) =>
+                        setFilter({
+                          ...filter,
+                          [e.target.name]: e.target.value,
+                        })
+                      }
                     />
                   </div>
                 </div>
@@ -370,7 +350,7 @@ export default function JobListingsSection() {
                               >
                                 <input
                                   id={`filter-${section.id}-${optionIdx}`}
-                                  name={`${section.id}[]`}
+                                  name={option.value}
                                   defaultValue={option.value}
                                   type="checkbox"
                                   defaultChecked={option.checked}
@@ -390,10 +370,9 @@ export default function JobListingsSection() {
                     )}
                   </Disclosure>
                 ))}
+
                 {/* Location Input */}
-                <InputText {...locationInput} />
-                {/* Fluency Input */}
-                <InputDropdown {...fluencyDropdown} />
+                <InputText {...locationInput} onChange={handleFilterChange} />
               </form>
 
               {/* Product grid */}

@@ -18,7 +18,7 @@ const JobCard = ({ job }) => {
           <BookmarkIcon className="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
-      <div className="w-min bg-primary-100 text-sm font-bold">
+      <div className="w-max bg-primary-100 px-1.5 py-1 text-sm font-bold">
         {job.contractType}
       </div>
       <div className="text-2xl">{job.title}</div>
@@ -27,7 +27,7 @@ const JobCard = ({ job }) => {
         ${salaryDisplay(job.salary.min)}-${salaryDisplay(job.salary.max)}{' '}
         <span className="font-normal text-secondary-500">/ Year</span>
       </div>
-      <div className="mt-10 flex w-full items-center justify-between text-sm font-bold">
+      <div className="flex w-full items-center justify-between pt-10 text-sm font-bold">
         <div>{`${job.location.city}, ${job.location.country}`}</div>
         <Link
           to={`/jobs/${job.key}`}

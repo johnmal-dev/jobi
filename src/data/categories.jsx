@@ -74,7 +74,7 @@ export const experienceFilter = {
     { value: 'beginner', label: 'Beginner (1-3yrs)', checked: false },
     {
       value: 'intermediate',
-      label: 'Intermediate (1-5 yrs)',
+      label: 'Intermediate (3-5 yrs)',
       checked: false,
     },
     { value: 'expert', label: 'Expert (1-10yrs)', checked: false },
