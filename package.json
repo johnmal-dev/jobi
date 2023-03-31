@@ -15,7 +15,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+    "react-password-checklist": "^1.4.3",
     "react-router-dom": "^6.9.0",
+    "sweetalert2": "^11.7.3",
     "vite-plugin-svgr": "^2.4.0"
   },
   "devDependencies": {

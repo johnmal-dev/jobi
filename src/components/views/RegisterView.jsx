@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import PasswordChecklist from 'react-password-checklist'
+import Swal from 'sweetalert2'
 import { Switch } from '@headlessui/react'
 import { registerService } from '../../utils/services'
 import { Link, useNavigate } from 'react-router-dom'
@@ -10,6 +12,10 @@ function classNames(...classes) {
 }
 
 export default function RegisterView() {
+  const [password, setPassword] = useState('')
+  const [passwordAgain, setPasswordAgain] = useState('')
+  const [showValidator, setShowValidator] = useState(false)
+  const [isValid, setIsValid] = useState(false)
   const [isEmployer, setIsEmployer] = useState(false)
   let navigate = useNavigate()
 
@@ -22,11 +28,23 @@ export default function RegisterView() {
     const name = formData.get('name') ?? undefined
     const accountType = isEmployer ? 'employer' : 'candidate'
     console.log(formData, email, password)
-    try {
-      await registerService(email, password, name, accountType)
-      navigate('/')
-    } catch (err) {
-      console.log('error', err)
+
+    if (!isValid) {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Invalid Password',
+        showConfirmButton: false,
+        timer: 1500,
+        target: window,
+      })
+    } else {
+      try {
+        await registerService(email, password, name, accountType)
+        navigate('/')
+      } catch (err) {
+        console.log('error', err)
+      }
     }
   }
 
@@ -132,15 +150,55 @@ export default function RegisterView() {
                 >
                   Password*
                 </label>
-                <div className="mt-2">
+                <div className="relative mt-2">
                   <input
                     id="password"
                     name="password"
                     type="password"
                     required
                     className="block w-full rounded-md border-0 px-2 py-2.5 text-lg text-gray-900 shadow-sm ring-1 ring-inset ring-primary-500 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-500 sm:text-sm sm:leading-6"
+                    onChange={(e) => setPassword(e.target.value)}
+                    onFocus={() => setShowValidator(true)}
+                    onBlur={() => setShowValidator(false)}
                   />
                 </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="passwordAgain"
+                  className="block text-sm leading-6 text-primary-500"
+                >
+                  Password Confirmation*
+                </label>
+                <div className="relative mt-2">
+                  <input
+                    id="passwordAgain"
+                    name="passwordAgain"
+                    type="password"
+                    required
+                    className="block w-full rounded-md border-0 px-2 py-2.5 text-lg text-gray-900 shadow-sm ring-1 ring-inset ring-primary-500 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-500 sm:text-sm sm:leading-6"
+                    onChange={(e) => setPasswordAgain(e.target.value)}
+                    onFocus={() => setShowValidator(true)}
+                    onBlur={() => setShowValidator(false)}
+                  />
+                </div>
+              </div>
+
+              <div
+                className={classNames(
+                  showValidator ? 'h-full opacity-100' : 'h-0 opacity-0',
+                  'transform overflow-hidden transition ease-in-out'
+                )}
+              >
+                <PasswordChecklist
+                  rules={['minLength', 'number', 'capital', 'match']}
+                  minLength={5}
+                  value={password}
+                  valueAgain={passwordAgain}
+                  onChange={(validity) => {
+                    setIsValid(validity)
+                  }}
+                />
               </div>
 
               <div>
