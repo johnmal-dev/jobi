@@ -20,7 +20,6 @@ function App() {
       } else {
         setCurrentUser(null)
         console.log('logged out')
-        navigate('/')
       }
     })
   }, [onAuthStateChanged])
