@@ -5,7 +5,7 @@ import app from '../../database/firebase'
 import { FaFacebookF, FaTwitter, FaLink } from 'react-icons/fa'
 import { salaryDisplay } from '../../utils/helpers'
 
-const JobInfoSection = () => {
+export default function JobSpecifics() {
   const { jobId } = useParams()
   const [jobData, setJobData] = useState(null)
   const [isCopied, setIsCopied] = useState(false)
@@ -202,5 +202,3 @@ const JobInfoSection = () => {
     </>
   )
 }
-
-export default JobInfoSection

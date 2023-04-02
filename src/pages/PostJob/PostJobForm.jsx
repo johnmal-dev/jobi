@@ -1,6 +1,6 @@
 import React from 'react'
-import InputDropdown from '../InputDropdown'
-import InputText from '../InputText'
+import InputDropdown from '../../components/InputDropdown'
+import InputText from '../../components/InputText'
 import {
   categoryDropdown as jobCategoryDropdown,
   jobTypeFilter as jobTypeDropdown,
@@ -108,7 +108,7 @@ const locationInput = {
   label: 'Map Location',
 }
 
-const PostNewJobFormSection = () => {
+export default function PostJobForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('submit form')
@@ -239,5 +239,3 @@ const PostNewJobFormSection = () => {
     </div>
   )
 }
-
-export default PostNewJobFormSection

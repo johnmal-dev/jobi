@@ -9,12 +9,12 @@ import {
   Squares2X2Icon,
   Bars3Icon,
 } from '@heroicons/react/20/solid'
-import InputDropdown from '../InputDropdown'
-import InputText from '../InputText'
+import InputDropdown from '../../components/InputDropdown'
+import InputText from '../../components/InputText'
 import { getDatabase, ref, onValue } from 'firebase/database'
 import app from '../../database/firebase'
-import JobsGridSection from './JobsGridSection'
-import AppContext from '../context/AppContext'
+import JobListingsLayout from './JobListingsLayout'
+import AppContext from '../../components/context/AppContext'
 import { filters, categoryDropdown } from '../../data/categories'
 
 const sortOptions = [
@@ -32,7 +32,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function JobListingsSection() {
+export default function JobListingsMain() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
   const {
     setJobsList,
@@ -395,7 +395,7 @@ export default function JobListingsSection() {
 
               {/* Product grid */}
               <div className="lg:col-span-3">
-                <JobsGridSection />
+                <JobListingsLayout />
               </div>
             </div>
           </section>

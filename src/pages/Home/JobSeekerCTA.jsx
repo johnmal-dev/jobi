@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UploadCVSection = () => {
+export default function JobSeekerCTA() {
   return (
     <div className="container overflow-hidden">
       <div className="relative mx-auto my-24 grid grid-cols-1 overflow-hidden bg-cv-section bg-cover bg-center bg-no-repeat px-8 text-white xs:px-12 sm:grid-cols-3 lg:grid-cols-2">
@@ -20,10 +20,8 @@ const UploadCVSection = () => {
             Upload your CV
           </button>
         </div>
-        <div className="absolute left-1/4 bottom-0 hidden h-full w-1/2 -translate-x-1/3 translate-y-14 bg-secondary-400 bg-opacity-50 sm:block lg:w-1/3 lg:translate-y-20 lg:-translate-x-1/2 xl:translate-y-12"></div>
+        <div className="absolute bottom-0 left-1/4 hidden h-full w-1/2 -translate-x-1/3 translate-y-14 bg-secondary-400 bg-opacity-50 sm:block lg:w-1/3 lg:-translate-x-1/2 lg:translate-y-20 xl:translate-y-12"></div>
       </div>
     </div>
   )
 }
-
-export default UploadCVSection

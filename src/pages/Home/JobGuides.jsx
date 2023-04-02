@@ -22,7 +22,7 @@ const articles = [
   },
 ]
 
-const JobiGuidesSection = () => {
+export default function JobGuides() {
   return (
     <div className="container">
       {/* Top */}
@@ -64,5 +64,3 @@ const JobiGuidesSection = () => {
     </div>
   )
 }
-
-export default JobiGuidesSection

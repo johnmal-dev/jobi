@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { FaFacebook } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
 
-export default function LoginView() {
+export default function Login() {
   let navigate = useNavigate()
 
   const handleSubmit = async (e) => {

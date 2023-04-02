@@ -9,7 +9,7 @@ import vineLogo from '../../assets/vine-logo.svg'
 import airbnbLogo from '../../assets/airbnb-logo.svg'
 import backArrow from '../../assets/back-arrow.svg'
 import nextArrow from '../../assets/next-arrow.svg'
-import StarsDisplay from '../StarsDisplay'
+import StarsDisplay from '../../components/StarsDisplay'
 
 const companies = [
   {
@@ -61,7 +61,7 @@ const partners = [
   },
 ]
 
-const ClientFeedbackSection = () => {
+export default function Reviews() {
   return (
     <div>
       <div className="container">
@@ -129,5 +129,3 @@ const ClientFeedbackSection = () => {
     </div>
   )
 }
-
-export default ClientFeedbackSection

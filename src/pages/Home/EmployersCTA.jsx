@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import image from '../../assets/get-talented-experts-image.svg'
 
-const GetTalentedExpertsSection = () => {
+export default function EmployersCTA() {
   return (
     <div className="bg-white">
       <div className="container grid grid-cols-1 py-20 lg:grid-cols-2 lg:py-44">
@@ -39,5 +39,3 @@ const GetTalentedExpertsSection = () => {
     </div>
   )
 }
-
-export default GetTalentedExpertsSection

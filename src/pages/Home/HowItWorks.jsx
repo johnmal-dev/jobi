@@ -3,11 +3,11 @@ import accountIcon from '../../assets/account-icon.svg'
 import profileIcon from '../../assets/profile-icon.svg'
 import applyIcon from '../../assets/apply-icon.svg'
 
-const HowItWorksSection = () => {
+export default function HowItWorks() {
   return (
     <div className="bg-primary-700 text-center text-white">
       <div className="container flex flex-col items-center justify-center">
-        <h3 className="relative mt-28 font-heading text-7xl after:absolute after:-top-12 after:-right-24 after:content-none sm:after:content-job-categories-art">
+        <h3 className="relative mt-28 font-heading text-7xl after:absolute after:-right-24 after:-top-12 after:content-none sm:after:content-job-categories-art">
           How it works
         </h3>
         <div className="my-12 flex flex-col items-center justify-center gap-16 md:my-24 md:flex-row md:gap-36">
@@ -45,5 +45,3 @@ const HowItWorksSection = () => {
     </div>
   )
 }
-
-export default HowItWorksSection

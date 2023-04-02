@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ReactComponent as ArrowIcon } from '../../assets/arrow-icon.svg'
 
-const ErrorView = () => {
+export default function Error() {
   return (
     <div>
       <div className="container my-24 grid grid-cols-2 gap-20">
@@ -19,7 +19,7 @@ const ErrorView = () => {
           </p>
           <Link
             to="/"
-            className="flex w-full items-center justify-between rounded-full bg-primary-300 py-4 px-8 font-medium uppercase leading-3 text-primary-700 shadow-sm ring-1 ring-inset ring-primary-300 hover:bg-gray-50 hover:text-primary-700 hover:ring-primary-700"
+            className="flex w-full items-center justify-between rounded-full bg-primary-300 px-8 py-4 font-medium uppercase leading-3 text-primary-700 shadow-sm ring-1 ring-inset ring-primary-300 hover:bg-gray-50 hover:text-primary-700 hover:ring-primary-700"
           >
             <div>Go Back</div>
             <div>
@@ -31,5 +31,3 @@ const ErrorView = () => {
     </div>
   )
 }
-
-export default ErrorView

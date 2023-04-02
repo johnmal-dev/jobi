@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import AppContext from '../context/AppContext'
+import AppContext from '../../components/context/AppContext'
 
-const HomeBannerSection = () => {
+export default function HomeBanner() {
   const { setFilter, filter } = useContext(AppContext)
   const navigate = useNavigate()
 
@@ -79,5 +79,3 @@ const HomeBannerSection = () => {
     </div>
   )
 }
-
-export default HomeBannerSection

@@ -1,12 +1,12 @@
-import JobCard from '../JobCard'
-import AppContext from '../context/AppContext'
+import JobCard from '../../components/JobCard'
+import AppContext from '../../components/context/AppContext'
 import { useContext } from 'react'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function JobsGridSection() {
+export default function JobListingsLayout() {
   const { filteredJobs, jobsViewType } = useContext(AppContext)
 
   return (

@@ -2,13 +2,13 @@ import React from 'react'
 import backArrow from '../../assets/back-arrow.svg'
 import nextArrow from '../../assets/next-arrow.svg'
 
-const ExpertSection = () => {
+export default function TalentSpotlight() {
   return (
     <div className="bg-white">
       <div className="container py-24 sm:py-32 md:py-48">
         {/* Top */}
         <div className="flex flex-col items-center justify-between gap-12 sm:flex-row sm:gap-0">
-          <h3 className="relative max-w-2xl text-center font-heading text-5xl text-primary-700 after:absolute after:-top-14 after:-right-6 after:content-none xs:text-6xl sm:text-left sm:text-7xl sm:after:content-job-categories-art">
+          <h3 className="relative max-w-2xl text-center font-heading text-5xl text-primary-700 after:absolute after:-right-6 after:-top-14 after:content-none xs:text-6xl sm:text-left sm:text-7xl sm:after:content-job-categories-art">
             Find the best talented experts on jobi.
           </h3>
           {/* buttons */}
@@ -74,5 +74,3 @@ const ExpertSection = () => {
     </div>
   )
 }
-
-export default ExpertSection

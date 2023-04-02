@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import AppContext from '../context/AppContext'
+import AppContext from '../../components/context/AppContext'
 import { useParams } from 'react-router-dom'
-import JobCard from '../JobCard'
+import JobCard from '../../components/JobCard'
 
-const RelatedJobsSection = () => {
+export default function RelatedJobs() {
   const { jobId } = useParams()
   const { jobsList } = useContext(AppContext)
   const relatedJobsList = jobsList.filter((job) => job.key !== jobId)
@@ -23,5 +23,3 @@ const RelatedJobsSection = () => {
     </div>
   )
 }
-
-export default RelatedJobsSection

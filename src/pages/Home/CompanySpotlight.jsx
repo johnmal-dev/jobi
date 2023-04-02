@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import art1 from '../../assets/collaboration.svg'
 
-const CollaborationSection = () => {
+export default function CompanySpotlight() {
   return (
     <div className="container my-24 xl:my-36">
       <div className="flex flex-col items-center justify-center gap-12 sm:gap-24 lg:flex-row lg:gap-32">
@@ -30,5 +30,3 @@ const CollaborationSection = () => {
     </div>
   )
 }
-
-export default CollaborationSection

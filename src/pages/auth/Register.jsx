@@ -11,7 +11,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function RegisterView() {
+export default function Register() {
   const [password, setPassword] = useState('')
   const [passwordAgain, setPasswordAgain] = useState('')
   const [showValidator, setShowValidator] = useState(false)
