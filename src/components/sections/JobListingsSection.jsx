@@ -75,11 +75,13 @@ export default function JobListingsSection() {
       }
       setJobsList(sortJobs(arr, sortOrder))
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
     const sortedJobs = sortJobs(jobsList, sortOrder)
     setJobsList(sortedJobs)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sortOrder])
 
   return (

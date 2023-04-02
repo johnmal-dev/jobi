@@ -1,5 +1,5 @@
 import { Fragment, useContext } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import UserContext from './context/UserContext'
@@ -12,14 +12,13 @@ function classNames(...classes) {
 
 export default function Header() {
   const { currentUser } = useContext(UserContext)
-  const navigate = useNavigate()
 
   return (
     <Disclosure as="nav" className="relative bg-primary-700">
       {({ open }) => (
         <>
           <div className="absolute left-2/3 hidden -translate-x-36 before:content-header-art xl:block"></div>
-          <div className="mx-auto py-6 px-2 sm:px-4 xl:px-16">
+          <div className="mx-auto px-2 py-6 sm:px-4 xl:px-16">
             <div className="relative flex h-16 items-center justify-between">
               <div className="flex items-center px-2 xl:px-0">
                 <div className="flex-shrink-0">
@@ -165,7 +164,7 @@ export default function Header() {
           </div>
 
           <Disclosure.Panel className="xl:hidden">
-            <div className="space-y-1 px-2 pt-2 pb-3">
+            <div className="space-y-1 px-2 pb-3 pt-2">
               <Disclosure.Button
                 as={Link}
                 to="/"
@@ -214,7 +213,7 @@ export default function Header() {
               )}
             </div>
             {currentUser && (
-              <div className="border-t border-gray-700 pt-4 pb-3">
+              <div className="border-t border-gray-700 pb-3 pt-4">
                 <div className="flex items-center px-5">
                   <div className="flex-shrink-0">
                     <UserIcon user={currentUser} />

@@ -27,17 +27,17 @@ const navigation = {
     {
       name: 'Facebook',
       href: '#',
-      icon: (props) => <FaFacebookF />,
+      icon: () => <FaFacebookF />,
     },
     {
       name: 'Instagram',
       href: '#',
-      icon: (props) => <FaInstagram />,
+      icon: () => <FaInstagram />,
     },
     {
       name: 'Pinterest',
       href: '#',
-      icon: (props) => <FaPinterestP />,
+      icon: () => <FaPinterestP />,
     },
   ],
 }
@@ -59,7 +59,7 @@ export default function Footer() {
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">
                   Products
                 </h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <ul className="mt-6 space-y-4">
                   {navigation.products.map((item) => (
                     <li key={item.name}>
                       <Link
@@ -78,7 +78,7 @@ export default function Footer() {
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">
                   Links
                 </h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <ul className="mt-6 space-y-4">
                   {navigation.links.map((item) => (
                     <li key={item.name}>
                       <Link
@@ -95,7 +95,7 @@ export default function Footer() {
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">
                   Legal
                 </h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <ul className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
                       <Link

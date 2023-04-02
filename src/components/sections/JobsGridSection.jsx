@@ -11,7 +11,6 @@ export default function JobsGridSection() {
 
   return (
     <ul
-      role="list"
       className={classNames(
         jobsViewType === 'grid'
           ? 'grid grid-cols-1 gap-6 sm:grid-cols-2'
