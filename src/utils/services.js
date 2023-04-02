@@ -67,17 +67,17 @@ const addJobService = (job) => {
     })
 }
 
-const addBookmark = (job, user) => {
-  if (user) {
-    // save job to key to users/${userId}/bookmarks
-    const db = getDatabase(app)
-    const userRef = ref(db, `users/${user.uid}`)
-    set(userRef, {
-      name: name,
-      email: email,
-      accountType: accountType,
-    })
-  }
-}
+// const addBookmark = (job, user) => {
+//   if (user) {
+//     // save job to key to users/${userId}/bookmarks
+//     const db = getDatabase(app)
+//     const userRef = ref(db, `users/${user.uid}`)
+//     set(userRef, {
+//       name: name,
+//       email: email,
+//       accountType: accountType,
+//     })
+//   }
+// }
 
 export { registerService, addJobService, loginService, logoutService }

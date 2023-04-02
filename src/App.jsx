@@ -6,11 +6,9 @@ import Header from './components/Header'
 import Main from './components/Main'
 import Footer from './components/Footer'
 import UserContext from './components/context/UserContext'
-import { useNavigate } from 'react-router-dom'
 
 function App() {
   const { setCurrentUser } = useContext(UserContext)
-  let navigate = useNavigate()
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -22,7 +20,7 @@ function App() {
         console.log('logged out')
       }
     })
-  }, [onAuthStateChanged])
+  }, [setCurrentUser])
   return (
     <div className="text-secondary-900">
       <Header />
