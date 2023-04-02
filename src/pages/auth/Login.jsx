@@ -1,8 +1,9 @@
 import React from 'react'
-import { loginService } from '../../utils/services'
-import { Link, useNavigate } from 'react-router-dom'
 import { FaFacebook } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
+import { Link, useNavigate } from 'react-router-dom'
+
+import { loginService } from '../../utils/services'
 
 export default function Login() {
   let navigate = useNavigate()

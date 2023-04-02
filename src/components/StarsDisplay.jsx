@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsStarFill, BsStar } from 'react-icons/bs'
+import { BsStar, BsStarFill } from 'react-icons/bs'
 
 const StarsDisplay = ({ rating }) => {
   // create an empty array to hold the star icons

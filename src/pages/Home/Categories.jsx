@@ -1,6 +1,7 @@
 import React from 'react'
-import CategoryCard from '../../components/CategoryCard'
 import { Link } from 'react-router-dom'
+
+import CategoryCard from '../../components/CategoryCard'
 import { jobData } from '../../data/categories'
 
 export default function Categories() {

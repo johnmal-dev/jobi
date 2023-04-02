@@ -1,10 +1,12 @@
 import { Fragment, useContext } from 'react'
 import { Link } from 'react-router-dom'
+
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import UserContext from './context/UserContext'
+
 import { logoutService } from '../utils/services'
 import UserIcon from './UserIcon'
+import UserContext from './context/UserContext'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')

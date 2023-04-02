@@ -1,21 +1,23 @@
-import { Fragment, useState, useEffect, useContext } from 'react'
+import { Fragment, useContext, useEffect, useState } from 'react'
+
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
 import {
+  Bars3Icon,
   ChevronDownIcon,
   FunnelIcon,
   MinusIcon,
   PlusIcon,
   Squares2X2Icon,
-  Bars3Icon,
 } from '@heroicons/react/20/solid'
+import { XMarkIcon } from '@heroicons/react/24/outline'
+import { getDatabase, onValue, ref } from 'firebase/database'
+
 import InputDropdown from '../../components/InputDropdown'
 import InputText from '../../components/InputText'
-import { getDatabase, ref, onValue } from 'firebase/database'
+import AppContext from '../../components/context/AppContext'
+import { categoryDropdown, filters } from '../../data/categories'
 import app from '../../database/firebase'
 import JobListingsLayout from './JobListingsLayout'
-import AppContext from '../../components/context/AppContext'
-import { filters, categoryDropdown } from '../../data/categories'
 
 const sortOptions = [
   { name: 'Recent', href: '#', current: false },

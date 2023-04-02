@@ -1,4 +1,5 @@
 import React from 'react'
+
 import backArrow from '../../assets/back-arrow.svg'
 import nextArrow from '../../assets/next-arrow.svg'
 

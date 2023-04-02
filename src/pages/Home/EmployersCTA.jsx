@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
 import image from '../../assets/get-talented-experts-image.svg'
 
 export default function EmployersCTA() {

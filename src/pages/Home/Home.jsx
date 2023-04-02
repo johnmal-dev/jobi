@@ -1,13 +1,14 @@
 import React from 'react'
-import Reviews from './Reviews'
+
+import Categories from './Categories'
 import CompanySpotlight from './CompanySpotlight'
-import TalentSpotlight from './TalentSpotlight'
 import EmployersCTA from './EmployersCTA'
 import HomeBanner from './HomeBanner'
 import HowItWorks from './HowItWorks'
-import Categories from './Categories'
 import JobGuides from './JobGuides'
 import JobSeekerCTA from './JobSeekerCTA'
+import Reviews from './Reviews'
+import TalentSpotlight from './TalentSpotlight'
 
 export default function Home() {
   return (

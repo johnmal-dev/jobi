@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+
 import AppContext from '../../components/context/AppContext'
 
 export default function HomeBanner() {

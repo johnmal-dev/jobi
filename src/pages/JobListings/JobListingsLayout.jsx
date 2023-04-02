@@ -1,6 +1,7 @@
+import { useContext } from 'react'
+
 import JobCard from '../../components/JobCard'
 import AppContext from '../../components/context/AppContext'
-import { useContext } from 'react'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')

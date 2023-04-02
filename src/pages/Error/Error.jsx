@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
 import { ReactComponent as ArrowIcon } from '../../assets/arrow-icon.svg'
 
 export default function Error() {

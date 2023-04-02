@@ -1,4 +1,5 @@
 import React from 'react'
+
 import JobsForm from '../../components/JobsForm'
 
 export default function JobListingsBanner() {

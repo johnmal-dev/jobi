@@ -1,19 +1,21 @@
 import React, { useContext, useEffect } from 'react'
+import { Route, Routes } from 'react-router-dom'
+
 import { onAuthStateChanged } from 'firebase/auth'
-import { auth } from './database/firebase'
+
 import './App.css'
-import Header from './components/Header'
 import Footer from './components/Footer'
+import Header from './components/Header'
+import PrivateRoute from './components/PrivateRoute'
 import UserContext from './components/context/UserContext'
-import { Routes, Route } from 'react-router-dom'
+import { auth } from './database/firebase'
+import Error from './pages/Error/Error'
 import Home from './pages/Home/Home'
-import JobListings from './pages/JobListings/JobListings'
 import JobDetails from './pages/JobDetails/JobDetails'
+import JobListings from './pages/JobListings/JobListings'
+import PostJob from './pages/PostJob/PostJob'
 import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
-import Error from './pages/Error/Error'
-import PrivateRoute from './components/PrivateRoute'
-import PostJob from './pages/PostJob/PostJob'
 
 export default function App() {
   const { setCurrentUser } = useContext(UserContext)

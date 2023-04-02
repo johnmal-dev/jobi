@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
-import AppContext from '../../components/context/AppContext'
 import { useParams } from 'react-router-dom'
+
 import JobCard from '../../components/JobCard'
+import AppContext from '../../components/context/AppContext'
 
 export default function RelatedJobs() {
   const { jobId } = useParams()

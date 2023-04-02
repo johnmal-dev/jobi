@@ -1,14 +1,15 @@
 import React from 'react'
-import mondayLogo from '../../assets/monday-logo.svg'
-import shipbobLogo from '../../assets/shipbob-logo.svg'
-import googleLogo from '../../assets/google-logo.svg'
-import shipbobLogo2 from '../../assets/shipbob-logo-gray.svg'
-import dribbbleLogo from '../../assets/dribbble-logo.svg'
-import slackLogo from '../../assets/slack-logo.svg'
-import vineLogo from '../../assets/vine-logo.svg'
+
 import airbnbLogo from '../../assets/airbnb-logo.svg'
 import backArrow from '../../assets/back-arrow.svg'
+import dribbbleLogo from '../../assets/dribbble-logo.svg'
+import googleLogo from '../../assets/google-logo.svg'
+import mondayLogo from '../../assets/monday-logo.svg'
 import nextArrow from '../../assets/next-arrow.svg'
+import shipbobLogo2 from '../../assets/shipbob-logo-gray.svg'
+import shipbobLogo from '../../assets/shipbob-logo.svg'
+import slackLogo from '../../assets/slack-logo.svg'
+import vineLogo from '../../assets/vine-logo.svg'
 import StarsDisplay from '../../components/StarsDisplay'
 
 const companies = [

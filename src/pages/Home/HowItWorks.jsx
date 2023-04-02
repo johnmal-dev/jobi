@@ -1,7 +1,8 @@
 import React from 'react'
+
 import accountIcon from '../../assets/account-icon.svg'
-import profileIcon from '../../assets/profile-icon.svg'
 import applyIcon from '../../assets/apply-icon.svg'
+import profileIcon from '../../assets/profile-icon.svg'
 
 export default function HowItWorks() {
   return (

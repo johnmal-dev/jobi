@@ -1,12 +1,13 @@
 import React from 'react'
+
 import InputDropdown from '../../components/InputDropdown'
 import InputText from '../../components/InputText'
 import {
+  experienceFilter as experienceDropdown,
   categoryDropdown as jobCategoryDropdown,
+  jobKeywords,
   jobTypeFilter as jobTypeDropdown,
   salaryFilter as salaryDropdown,
-  jobKeywords,
-  experienceFilter as experienceDropdown,
 } from '../../data/categories'
 
 const steps = [

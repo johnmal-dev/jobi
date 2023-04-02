@@ -1,10 +1,11 @@
-import app, { auth } from '../database/firebase'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
 } from 'firebase/auth'
-import { getDatabase, ref, update, push, set } from 'firebase/database'
+import { getDatabase, push, ref, set, update } from 'firebase/database'
+
+import app, { auth } from '../database/firebase'
 
 const registerService = (email, password, name, accountType) => {
   createUserWithEmailAndPassword(auth, email, password)

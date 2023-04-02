@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import PasswordChecklist from 'react-password-checklist'
-import Swal from 'sweetalert2'
-import { Switch } from '@headlessui/react'
-import { registerService } from '../../utils/services'
-import { Link, useNavigate } from 'react-router-dom'
 import { FaFacebook } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
+import PasswordChecklist from 'react-password-checklist'
+import { Link, useNavigate } from 'react-router-dom'
+
+import { Switch } from '@headlessui/react'
+import Swal from 'sweetalert2'
+
+import { registerService } from '../../utils/services'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')

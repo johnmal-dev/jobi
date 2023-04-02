@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Link, Navigate } from 'react-router-dom'
-import { getDatabase, ref, onValue } from 'firebase/database'
+import { FaFacebookF, FaLink, FaTwitter } from 'react-icons/fa'
+import { Link, Navigate, useParams } from 'react-router-dom'
+
+import { getDatabase, onValue, ref } from 'firebase/database'
+
 import app from '../../database/firebase'
-import { FaFacebookF, FaTwitter, FaLink } from 'react-icons/fa'
 import { salaryDisplay } from '../../utils/helpers'
 
 export default function JobSpecifics() {
