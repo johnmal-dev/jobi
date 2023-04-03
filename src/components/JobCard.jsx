@@ -70,7 +70,7 @@ const JobCard = ({ job, jobsViewType = 'grid' }) => {
           </div>
         </div>
         {/* Location and Employer */}
-        <div className="col-span-2 flex flex-col gap-1 text-sm text-xs sm:col-span-3 sm:text-base md:col-span-2">
+        <div className="col-span-2 flex flex-col gap-1 text-xs sm:col-span-3 sm:text-base md:col-span-2">
           <div>{`${job.location.city}, ${job.location.country}`}</div>
           <div className="font-bold">{job.employer}</div>
         </div>

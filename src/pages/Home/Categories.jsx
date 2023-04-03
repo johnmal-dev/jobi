@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import CategoryCard from '../../components/CategoryCard'
-import { jobData } from '../../data/categories'
+import { jobData } from '../../utils/categories'
 
 export default function Categories() {
   return (

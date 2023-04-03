@@ -15,8 +15,8 @@ import { getDatabase, onValue, ref } from 'firebase/database'
 import InputDropdown from '../../components/InputDropdown'
 import InputText from '../../components/InputText'
 import AppContext from '../../components/context/AppContext'
-import { categoryDropdown, filters } from '../../data/categories'
 import app from '../../database/firebase'
+import { categoryDropdown, filters } from '../../utils/categories'
 import JobListingsLayout from './JobListingsLayout'
 
 const sortOptions = [

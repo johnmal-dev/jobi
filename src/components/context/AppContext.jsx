@@ -15,6 +15,7 @@ export const AppProvider = ({ children }) => {
     jobType: [],
     experienceLevel: [],
     location: '',
+    category: '',
   })
 
   const filteredJobs = jobsList.filter((job) => {

@@ -1,14 +1,15 @@
 import React from 'react'
 
 import InputDropdown from '../../components/InputDropdown'
+import InputDropdownNew from '../../components/InputDropdownNew'
 import InputText from '../../components/InputText'
 import {
   experienceFilter as experienceDropdown,
-  categoryDropdown as jobCategoryDropdown,
   jobKeywords,
-  jobTypeFilter as jobTypeDropdown,
   salaryFilter as salaryDropdown,
-} from '../../data/categories'
+} from '../../utils/categories'
+import jobCategories from '../../utils/jobCategories'
+import jobTypes from '../../utils/jobTypes'
 
 const steps = [
   {
@@ -112,6 +113,9 @@ const locationInput = {
 export default function PostJobForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
+    const formData = new FormData(e.target)
+    const jobCategory = formData.get('job-category') ?? ''
+    console.log(jobCategory)
     console.log('submit form')
   }
 
@@ -152,10 +156,20 @@ export default function PostJobForm() {
               {/* Job Description */}
               <InputText {...jobDescriptionInput} />
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {/* Job Category */}
-                <InputDropdown {...jobCategoryDropdown} />
+                {/* Job Category Dropdown */}
+                <InputDropdownNew
+                  label="Job Category"
+                  defaultOptionText="Choose Category"
+                  array={jobCategories}
+                  id="job-category"
+                />
                 {/* Job Type */}
-                <InputDropdown {...jobTypeDropdown} />
+                <InputDropdownNew
+                  label="Job Type"
+                  defaultOptionText="Choose Job Type"
+                  array={jobTypes}
+                  id="job-types"
+                />
               </div>
               <div className="grid grid-cols-2 gap-x-2 sm:grid-cols-4 sm:gap-4">
                 {/* Salary */}
@@ -172,6 +186,8 @@ export default function PostJobForm() {
               <h2 className="text-3xl font-medium text-primary-500">
                 Skills & Experience
               </h2>
+              {/* Experience */}
+              <InputDropdown {...experienceDropdown} />
               {/* Skills */}
               <InputText {...skillsInput} />
               <div className="flex flex-wrap gap-2">
@@ -185,18 +201,6 @@ export default function PostJobForm() {
                     </button>
                   )
                 })}
-              </div>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {/* Experience */}
-                <InputDropdown {...experienceDropdown} />
-                {/* Qualification */}
-                <InputDropdown {...qualificationDropdown} />
-              </div>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {/* Industry */}
-                <InputDropdown {...industryDropdown} />
-                {/* Career Level */}
-                <InputDropdown {...careerLevelDropdown} />
               </div>
             </div>
 

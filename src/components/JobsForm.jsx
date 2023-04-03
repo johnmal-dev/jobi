@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 
+import jobCategories from '../utils/jobCategories'
 import AppContext from './context/AppContext'
 
 const JobsForm = () => {
@@ -39,14 +40,20 @@ const JobsForm = () => {
             Category
           </label>
           <select
-            id="categorySelect"
-            name="categorySelect"
+            id="categoryInput"
+            name="categoryInput"
             className="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+            defaultValue={'all'}
+            onChange={() => console.log('value changed')}
           >
-            <option>Web Design</option>
-            <option>Art</option>
-            <option>Business</option>
-            <option>Video Editing</option>
+            <option value="all">All Categories</option>
+            {jobCategories.map((category, index) => {
+              return (
+                <option key={index} value={category}>
+                  {category}
+                </option>
+              )
+            })}
           </select>
         </div>
       </div>

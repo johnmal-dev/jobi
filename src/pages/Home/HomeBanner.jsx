@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import AppContext from '../../components/context/AppContext'
+import jobCategories from '../../utils/jobCategories'
 
 export default function HomeBanner() {
   const { setFilter, filter } = useContext(AppContext)
@@ -22,8 +23,13 @@ export default function HomeBanner() {
           onSubmit={(e) => {
             e.preventDefault()
             const formData = new FormData(e.target)
-            const userInput = formData.get('keywordInput') ?? ''
-            setFilter({ ...filter, keywords: userInput })
+            const keywordInput = formData.get('keywordInput') ?? ''
+            const categoryInput = formData.get('categoryInput') ?? ''
+            setFilter({
+              ...filter,
+              keywords: keywordInput,
+              category: categoryInput,
+            })
             navigate('/jobs')
           }}
           className="relative z-20 mt-6 flex w-full flex-col md:flex-row lg:w-3/4"
@@ -46,20 +52,26 @@ export default function HomeBanner() {
           <div className="flex-1 bg-white px-6 py-3 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-primary-300">
             <div>
               <label
-                htmlFor="categorySelect"
+                htmlFor="categoryInput"
                 className="block text-xs font-medium text-secondary-500"
               >
                 Category
               </label>
               <select
-                id="categorySelect"
-                name="categorySelect"
+                id="categoryInput"
+                name="categoryInput"
                 className="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                defaultValue={'all'}
+                onChange={() => console.log('value changed')}
               >
-                <option>Web Design</option>
-                <option>Art</option>
-                <option>Business</option>
-                <option>Video Editing</option>
+                <option value="all">All Categories</option>
+                {jobCategories.map((category, index) => {
+                  return (
+                    <option key={index} value={category}>
+                      {category}
+                    </option>
+                  )
+                })}
               </select>
             </div>
           </div>
